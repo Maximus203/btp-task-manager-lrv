@@ -16,8 +16,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::view('register', 'page.utilisateur')->name('register');
-    Route::view('creer', 'page.projets.creer')->name('creer');
+    Route::view('register', 'pages.utilisateur')->name('register');
+    Route::view('creer', 'pages.projets.creer')->name('creer');
 
     Volt::route('verify-email', 'pages.auth.verify-email')
         ->name('verification.notice');

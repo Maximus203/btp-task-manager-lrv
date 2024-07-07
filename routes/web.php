@@ -19,7 +19,7 @@ Route::view('profile', 'profile')->middleware(['auth'])->name('profile');
 
 
 Route::middleware('auth')->group(function () {
-    Route::view('liste-projets', 'dashboard')->name('liste-projet');
-    Route::view('projets', 'page.projets.create')->name('creation-projet');
+    Route::view('lister-projets', 'dashboard')->name('liste-projet');
+    Route::view('projets', 'pages.projets.creer')->name('creation-projet');
 });
 require __DIR__ . '/auth.php';
