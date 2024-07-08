@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "975887d932e51b65ae4fb48786033ee6",
+    "content-hash": "916943b081a6969a3b8fc62eb93760f0",
     "packages": [
         {
             "name": "brick/math",
@@ -5825,105 +5825,39 @@
             "time": "2022-06-03T18:03:27+00:00"
         },
         {
-            "name": "wireui/heroicons",
-            "version": "v2.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wireui/heroicons.git",
-                "reference": "d90dc12a6759140f2dc7e94fd8da9bc355574aea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wireui/heroicons/zipball/d90dc12a6759140f2dc7e94fd8da9bc355574aea",
-                "reference": "d90dc12a6759140f2dc7e94fd8da9bc355574aea",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^9.16|^10.0|^11.0",
-                "php": "^8.1|^8.2|^8.3|^8.4"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.6",
-                "mockery/mockery": "^1.5",
-                "nunomaduro/larastan": "^2.4",
-                "orchestra/testbench": "^7.7|^8.0|^9.0",
-                "pestphp/pest": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "WireUi\\Heroicons\\HeroiconsServiceProvider"
-                    ]
-                },
-                "aliases": []
-            },
-            "autoload": {
-                "psr-4": {
-                    "WireUi\\Heroicons\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pedro Oliveira",
-                    "email": "pedro@wireui.dev"
-                }
-            ],
-            "description": "The Tailwind Heroicons for laravel blade by WireUI",
-            "keywords": [
-                "blade components",
-                "blade heroicons",
-                "laravel components",
-                "livewire icons",
-                "livewire icons components",
-                "wireui"
-            ],
-            "support": {
-                "issues": "https://github.com/wireui/heroicons/issues",
-                "source": "https://github.com/wireui/heroicons/tree/v2.6.1"
-            },
-            "time": "2024-05-23T15:15:30+00:00"
-        },
-        {
             "name": "wireui/wireui",
-            "version": "v2.0.5",
+            "version": "v1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wireui/wireui.git",
-                "reference": "8a02a9bc704d3ef62e0f46cca10b5b6a97e5fe63"
+                "reference": "dc06393e5b6889b1f2f217f42676f94b4492222b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wireui/wireui/zipball/8a02a9bc704d3ef62e0f46cca10b5b6a97e5fe63",
-                "reference": "8a02a9bc704d3ef62e0f46cca10b5b6a97e5fe63",
+                "url": "https://api.github.com/repos/wireui/wireui/zipball/dc06393e5b6889b1f2f217f42676f94b4492222b",
+                "reference": "dc06393e5b6889b1f2f217f42676f94b4492222b",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^10.0|^11.0",
-                "php": "^8.2|^8.3",
-                "wireui/heroicons": "^2.6"
+                "laravel/framework": "10.*",
+                "livewire/livewire": "^3.0",
+                "php": "^8.1"
             },
             "require-dev": {
-                "laravel/pint": "^1.16",
-                "livewire/livewire": "^3.5",
-                "mockery/mockery": "^1.6",
-                "orchestra/testbench": "^8.14|^9.0",
-                "orchestra/testbench-dusk": "^8.14|^9.0",
-                "pestphp/pest": "^2.34",
-                "pestphp/pest-plugin-laravel": "^2.4",
-                "pestphp/pest-plugin-livewire": "^2.1",
-                "phpunit/phpunit": "^10.5",
-                "psy/psysh": "^0.12.3"
+                "friendsofphp/php-cs-fixer": "^3.9",
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^8.0",
+                "orchestra/testbench-dusk": "^8.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-mock": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "psy/psysh": "@stable"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "WireUi\\ServiceProvider"
+                        "WireUi\\Providers\\WireUiServiceProvider"
                     ],
                     "aliases": []
                 }
@@ -5940,7 +5874,7 @@
             "authors": [
                 {
                     "name": "Pedro Oliveira",
-                    "email": "pedro@wireui.dev"
+                    "email": "pedrolivertwd@gmail.com"
                 }
             ],
             "description": "TallStack components",
@@ -5953,9 +5887,15 @@
             ],
             "support": {
                 "issues": "https://github.com/wireui/wireui/issues",
-                "source": "https://github.com/wireui/wireui/tree/v2.0.5"
+                "source": "https://github.com/wireui/wireui/tree/v1.18.0"
             },
-            "time": "2024-07-03T05:29:41+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/PH7-Jack",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-02T02:56:10+00:00"
         }
     ],
     "packages-dev": [
@@ -7015,16 +6955,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.25",
+            "version": "10.5.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "831bf82312be6037e811833ddbea0b8de60ea314"
+                "reference": "42e2f13ceaa2e34461bc89bea75407550b40b2aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/831bf82312be6037e811833ddbea0b8de60ea314",
-                "reference": "831bf82312be6037e811833ddbea0b8de60ea314",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/42e2f13ceaa2e34461bc89bea75407550b40b2aa",
+                "reference": "42e2f13ceaa2e34461bc89bea75407550b40b2aa",
                 "shasum": ""
             },
             "require": {
@@ -7096,7 +7036,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.25"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.26"
             },
             "funding": [
                 {
@@ -7112,7 +7052,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-03T05:49:17+00:00"
+            "time": "2024-07-08T05:30:46+00:00"
         },
         {
             "name": "sebastian/cli-parser",

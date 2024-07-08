@@ -6,7 +6,7 @@ use Livewire\Volt\Volt;
 
 Route::middleware('guest')->group(function () {
 
-    Route::view('login', 'page.utilisateur')->name('login');
+    Route::view('login', 'pages.utilisateur')->name('login');
 
     Volt::route('forgot-password', 'pages.auth.forgot-password')
         ->name('password.request');

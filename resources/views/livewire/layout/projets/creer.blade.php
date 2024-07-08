@@ -3,17 +3,15 @@
         <div class="w-full mb-5 group">
             <x-input wire:model.blur="nomProjet" label="Nom du Projet" required placeholder="Codou Diouf" />
         </div>
-
         <div class="w-full mb-5 group">
-            <x-select wire:model="client" label="Sélectionner un client" placeholder="Client" :options="$clients"
+            <x-select wire:model="client" label="Sélectionner un client" placeholder="Client" :options="$clients" 
                 option-label="nomcomplet" option-value="id" required />
         </div>
 
         <div class="w-full mb-5 group">
             <x-select wire:model="client" label="Sélectionner un chef de projet" placeholder="Chef de projet"
-                :options="$chefProjets" option-label="nomcomplet" option-value="id" required />
+            :options="$chefProjets" option-label="nomcomplet" option-value="id" required />
         </div>
-
 
         <div class="w-full mb-5 group">
             <x-select wire:model="client" label="Sélectionner des ouvriers" placeholder="Ouvriers" :options="$ouvriersListes"
@@ -51,7 +49,7 @@
         </div>
 
         <div class="w-full mb-5 group">
-            <x-button label="Ajouter" right-icon="check" outline interaction:solid="primary" />
+            <x-button label="Ajouter" right-icon="check" outline interaction="primary" />
         </div>
     </form>
 </div>
