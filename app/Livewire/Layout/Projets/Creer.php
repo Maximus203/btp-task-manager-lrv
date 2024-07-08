@@ -28,8 +28,13 @@ class Creer extends Component
     public $client = '';
     #[Validate('required')]
     public $ouvriers = [];
+    public $showOuvrierSelect = false;
 
-
+    public function addOuvrier()
+    {
+        $this->ouvriers[] = null;
+        $this->showOuvrierSelect = true;
+    }
 
     public function submit()
     {
@@ -45,17 +50,17 @@ class Creer extends Component
             'chefProjet' => $validated['chefProjet'],
             'client' => $validated['client'],
         ]);
+
         foreach ($validated['ouvriers'] as $ouvrier) {
             ProjetOuvrier::create([
                 'idProjet' => $projet->id,
                 'ouvrier' => $ouvrier->id
             ]);
         }
-        // $projet->ouvriers()->attach($this->ouvriers);
-
 
         $this->resetForm();
     }
+
     private function resetForm()
     {
         $this->nomProjet = '';
@@ -67,7 +72,9 @@ class Creer extends Component
         $this->chefProjet = '';
         $this->client = '';
         $this->ouvriers = [];
+        $this->showOuvrierSelect = false;
     }
+
     public function render()
     {
         $chefProjets = User::where("idRole", 2)->get();
