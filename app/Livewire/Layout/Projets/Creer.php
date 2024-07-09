@@ -26,20 +26,25 @@ class Creer extends Component
     public $chefProjet = '';
     #[Validate('required')]
     public $client = '';
-    #[Validate('required')]
+    #[Validate('array')]
     public $ouvriers = [];
-    public $showOuvrierSelect = false;
 
-    public function addOuvrier()
-    {
-        $this->ouvriers[] = null;
-        $this->showOuvrierSelect = true;
-    }
+
 
     public function submit()
     {
-        $validated = $this->validate();
-
+        $validated = $this->validate([
+            'nomProjet' => 'required|string',
+            'description' => 'required|string',
+            'dateDeDebut' => 'required|date',
+            'dateDeFin' => 'required|date|after:dateDeDebut',
+            'budget' => 'required|numeric',
+            'statut' => 'required|in:initial,en_cours,terminer',
+            'chefProjet' => 'required',
+            'client' => 'required',
+            'ouvriers' => 'array',
+        ]);
+        dd($validated);
         $projet = Projet::create([
             'nomProjet' => $validated['nomProjet'],
             'budget' => $validated['budget'],
@@ -54,7 +59,7 @@ class Creer extends Component
         foreach ($validated['ouvriers'] as $ouvrier) {
             ProjetOuvrier::create([
                 'idProjet' => $projet->id,
-                'ouvrier' => $ouvrier->id
+                'ouvrier' => $ouvrier
             ]);
         }
 
@@ -72,7 +77,6 @@ class Creer extends Component
         $this->chefProjet = '';
         $this->client = '';
         $this->ouvriers = [];
-        $this->showOuvrierSelect = false;
     }
 
     public function render()
