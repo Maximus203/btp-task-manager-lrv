@@ -1,3 +1,5 @@
 <div>
-    {{-- Close your eyes. Count to one. That is how long forever feels. --}}
+<div>
+    <h1>Détails du projet : {{ $projet->nomProjet }}</h1>
+</div>
 </div>

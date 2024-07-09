@@ -23,15 +23,14 @@
                     @foreach ($projets as $projet)
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td class="px-6 py-4"><a href="">{{ $projet->nomProjet }}</a></td>
+                            <td class="px-6 py-4"><a href= "{{ route('details-projet',["id"=>$projet->idProjet]) }}">{{ $projet->nomProjet }}</a></td>
                             <td class="px-6 py-4">{{ $projet->chefDeProjet->prenom }} {{ $projet->chefDeProjet->nom }}
                             </td>
                             <td class="px-6 py-4">{{ $projet->statut }}</td>
                             <td class="px-6 py-4">{{ $projet->clientProjet->prenom }} {{ $projet->clientProjet->nom }}
                             </td>
                             <td class="px-6 py-4">
-                                <button wire:click="edit({{ $projet->id }})"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</button>
+                                <a href= "{{ route('modifier-projet',["id"=>$projet->idProjet]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>
                             </td>
                         </tr>
                     @endforeach
