@@ -8,12 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Projet extends Model
 {
 
-    // Définir la clé primaire
+    use HasFactory;
     protected $primaryKey = 'idProjet';
 
-    // Permet de spécifier si la clé primaire est autoincrementée
-    public $incrementing = true;
-    use HasFactory;
     protected $fillable = [
         'nomProjet',
         'description',

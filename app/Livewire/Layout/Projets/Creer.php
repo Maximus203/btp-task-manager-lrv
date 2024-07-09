@@ -46,6 +46,7 @@ class Creer extends Component
         ]);
         // dd($validated);
         $projet = Projet::create([
+
             'nomProjet' => $validated['nomProjet'],
             'budget' => $validated['budget'],
             'dateDeDebut' => $validated['dateDeDebut'],
@@ -55,10 +56,10 @@ class Creer extends Component
             'chefProjet' => $validated['chefProjet'],
             'client' => $validated['client'],
         ]);
-
+        // dd($projet);
         foreach ($validated['ouvriers'] as $ouvrier) {
             ProjetOuvrier::create([
-                'idProjet' => $projet->id,
+                'idProjet' => $projet->idProjet,
                 'ouvrier' => $ouvrier
             ]);
         }
@@ -93,6 +94,7 @@ class Creer extends Component
         foreach ($ouvriers as $ouvrier) {
             $ouvrier->nomcomplet = $ouvrier->prenom . " " . $ouvrier->nom;
         }
+
         return view('livewire.layout.projets.creer', [
             "clients" => $clients,
             "chefProjets" => $chefProjets,

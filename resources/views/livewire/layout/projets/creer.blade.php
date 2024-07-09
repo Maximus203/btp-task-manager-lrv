@@ -1,5 +1,6 @@
 <div class="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-lg mt-10">
     <form class="space-y-6" wire:submit.prevent="submit">
+
         <!-- Nom du projet -->
         <div>
             <label for="nomProjet" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Nom du projet</label>
