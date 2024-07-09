@@ -9,24 +9,27 @@ class Projet extends Model
 {
     use HasFactory;
     protected $fillable = [
-    'nomProjet',
-    'description',
-    'dateDeDebut',
-    'dateDeFin',
-    'budget',
-    'status',
-    'chefProjet',
-    'client',
-    'projet_ouvrier',
+        'nomProjet',
+        'description',
+        'dateDeDebut',
+        'dateDeFin',
+        'budget',
+        'statut',
+        'chefProjet',
+        'client',
+        'projet_ouvrier',
     ];
 
-    public function chefDeProjet(){
+    public function chefDeProjet()
+    {
         return $this->belongsTo(User::class, 'chefProjet');
     }
-    public function client(){
+    public function clientProjet()
+    {
         return $this->belongsTo(User::class, 'client');
     }
-    public function ouvriers(){
+    public function ouvriers()
+    {
         return $this->belongsToMany(User::class, 'projet_ouvrier')->withPivot('idRole');
     }
 }

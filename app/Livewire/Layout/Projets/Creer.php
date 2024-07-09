@@ -44,7 +44,7 @@ class Creer extends Component
             'client' => 'required',
             'ouvriers' => 'array',
         ]);
-        dd($validated);
+        // dd($validated);
         $projet = Projet::create([
             'nomProjet' => $validated['nomProjet'],
             'budget' => $validated['budget'],

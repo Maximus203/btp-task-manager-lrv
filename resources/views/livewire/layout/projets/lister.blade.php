@@ -23,7 +23,7 @@
                     @foreach ($projets as $projet)
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td class="px-6 py-4">{{ $projet->nomProjet }}</td>
+                            <td class="px-6 py-4"><a href="">{{ $projet->nomProjet }}</a></td>
                             <td class="px-6 py-4">{{ $projet->chefDeProjet->prenom }} {{ $projet->chefDeProjet->nom }}
                             </td>
                             <td class="px-6 py-4">{{ $projet->statut }}</td>
@@ -38,5 +38,4 @@
                 </tbody>
             </table>
         </div>
-
     </div>

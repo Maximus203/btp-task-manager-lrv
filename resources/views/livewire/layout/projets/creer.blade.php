@@ -42,6 +42,17 @@
                 @endforeach
             @endif
         </div>
+        <!-- Budget -->
+
+        <div>
+            <label for="budget" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">budget</label>
+            <input type="number" name="budget" id="budget" wire:model.blur="budget" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisir le nom du projet" required />
+            @if ($errors->get("budget"))
+                @foreach ($errors->get("budget") as $error)
+                    <span class="text-red-500 text-sm">{{ $error }}</span>
+                @endforeach
+            @endif
+        </div>
 
         <!-- Sélectionner des ouvriers -->
         <div>
@@ -89,7 +100,7 @@
         
 
        <div class="w-full mb-5 group flex flex-row">
-            <label for="statut" class="block w-1/4 mb-2 text-sm font-medium text-gray-500">Status</label>
+            <label for="statut" class="block w-1/4 mb-2 text-sm font-medium text-gray-500">Statut</label>
             <div class="w-1/4">
                 <x-radio id="rounded-lg" wire:model="statut" rounded="lg" label="Initial" value="initial" xl />
             </div>
@@ -124,7 +135,7 @@
                 </div>
                 <input wire:model="dateDeFin" id="dateDeFin" name="dateDeFin" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Date de fin">
             </div>
-        </div> --}}
+        </div>  --}}
 
        <div>
         <input wire:model="dateDeDebut" type="date" name="dateDeDebut" id="dateDeDebut" placeholder="Date de debut">
