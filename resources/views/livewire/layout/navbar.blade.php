@@ -68,7 +68,7 @@
                                     class="h-5 inline-block align-middle mr-2 pb-0.5" alt="">Projets</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="{{ route('lister-tache') }}"
                                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                                 <img src="{{ asset('images/tache.png') }}" class="h-5 inline-block align-middle mr-2 pb-1"
                                     alt="">Taches</a>

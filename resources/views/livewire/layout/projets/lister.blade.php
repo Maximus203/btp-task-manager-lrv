@@ -17,7 +17,9 @@
                         <th scope="col" class="px-6 py-3">Client</th>
                         <th scope="col" class="px-6 py-3">Action</th>
                     </tr>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                 </thead>
+
                 <tbody>
 
                     @foreach ($projets as $projet)
@@ -31,10 +33,28 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href= "{{ route('modifier-projet',["id"=>$projet->idProjet]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>
-                            </td>
+<button onclick="confirmDelete({{ $projet->idProjet }})" class="font-medium text-red-600 dark:text-red-500 hover:underline">Supprimer</button>                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+
         </div>
+        <script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Êtes-vous sûr?',
+            text: "Vous ne pourrez pas revenir en arrière !",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Oui, supprimer!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                @this.confirmSupprimer(id);
+            }
+        })
+    }
+</script>
     </div>

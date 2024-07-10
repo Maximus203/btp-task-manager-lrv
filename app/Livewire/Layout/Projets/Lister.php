@@ -12,4 +12,21 @@ class Lister extends Component
         $projets = Projet::all();
         return view('livewire.layout.projets.lister', ['projets' => $projets]);
     }
+
+
+    public $projetIdToDelete = null;
+
+    public function confirmSupprimer($id)
+    {
+        $this->projetIdToDelete = $id;
+        $this->supprimer($id);
+    }
+
+    public function supprimer($id)
+    {
+        $projet = Projet::find($id);
+        if ($projet) {
+            $projet->delete();
+        }
+    }
 }

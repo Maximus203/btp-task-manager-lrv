@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id('idTache');
             $table->string('nomTache');
             $table->string('description');
-            $table->date('dateLimite');
-            $table->foreignId('responsable')->constrained(table: 'users', column: 'id');
+            $table->date('dateDeDebut');
+            $table->date('dateDeFin');
+            $table->float('budget');
+            $table->foreignId('ouvrier')->constrained(table: 'users', column: 'id');
             $table->foreignId('idProjet')->constrained(table: 'projets', column: 'idProjet');
             $table->enum('statut', ['initial', 'en_cours', 'terminer']);
 
