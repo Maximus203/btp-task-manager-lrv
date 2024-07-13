@@ -42,10 +42,12 @@ class Creer extends Component
     public function register()
     {
         $validated = $this->validate();
-        $validated['password'] = Hash::make($this->genererMDP());
+        $password = $this->genererMDP();
+        $validated['password'] = Hash::make($password);
         $user = User::create($validated);
         event(new Registered($user));
-        Mail::to($user->email)->queue(new WelcomeMail($user, $validated['password']));
+        Mail::to($user->email)->queue(new WelcomeMail($user, $password));
         $this->redirect(route('dashboard'), navigate: true);
+        $this->reset(); // Ajoutez cette ligne
     }
 }

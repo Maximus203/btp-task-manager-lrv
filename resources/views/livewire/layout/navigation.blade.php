@@ -11,8 +11,10 @@ new class extends Component
     public function logout(Logout $logout): void
     {
         $logout();
+        $this->redirect(route('login'));
 
-        $this->redirect('/', navigate: true);
+
+        // $this->redirect('/', navigate: true);
     }
 }; ?>
 

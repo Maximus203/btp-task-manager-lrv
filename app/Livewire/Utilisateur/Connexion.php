@@ -22,14 +22,14 @@ class Connexion extends Component
     {
         $validated = $this->validate();
 
-        //$user = User::find('email', $validated['email']);
-        if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password']])) {
+        if (Auth::attempt(['email' => $validated['email'], 'password' => $validated['password']], $this->remember)) {
             Session::regenerate();
             $this->redirectIntended(default: route('dashboard'), navigate: true);
         } else {
             session()->flash('error', 'Email ou Mot de passe incorrect.');
         }
     }
+
 
     public function render()
     {

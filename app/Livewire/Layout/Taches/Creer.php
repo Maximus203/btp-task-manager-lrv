@@ -17,7 +17,7 @@ class Creer extends Component
     public $budget = '';
     public $statut = '';
     public $nomTache = '';
-    public $ouvrier = ''; // Changez ceci
+    public $ouvrier = '';
 
     protected function rules()
     {
@@ -29,7 +29,7 @@ class Creer extends Component
             'budget' => 'required|numeric',
             'statut' => ['required', Rule::in(['initial', 'en_cours', 'terminer'])],
             'nomTache' => 'required|string',
-            'ouvrier' => 'required|exists:users,id', // Changez ceci
+            'ouvrier' => 'required|exists:users,id',
         ];
     }
 
@@ -45,7 +45,7 @@ class Creer extends Component
             'budget' => $validated['budget'],
             'statut' => $validated['statut'],
             'nomTache' => $validated['nomTache'],
-            'ouvrier' => $validated['ouvrier'], // Changez ceci
+            'ouvrier' => $validated['ouvrier'],
         ]);
 
         $this->resetForm();
@@ -60,17 +60,17 @@ class Creer extends Component
         $this->budget = '';
         $this->statut = '';
         $this->nomTache = '';
-        $this->ouvrier = ''; // Changez ceci
+        $this->ouvrier = '';
     }
 
     public function render()
     {
-        $ouvriers = User::where("idRole", 3)->get()->map(function($ouvrier) {
+        $ouvriers = User::where("idRole", 3)->get()->map(function ($ouvrier) {
             $ouvrier->nomcomplet = $ouvrier->prenom . " " . $ouvrier->nom;
             return $ouvrier;
         });
 
-        $projets = Projet::all(); // Récupère tous les projets
+        $projets = Projet::all();
 
         return view('livewire.layout.taches.creer', [
             'ouvriers' => $ouvriers,

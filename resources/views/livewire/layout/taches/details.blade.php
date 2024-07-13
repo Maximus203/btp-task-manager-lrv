@@ -43,7 +43,7 @@
                    {{ $tache->projet->nomProjet}}
                 </td>
                  <td class="px-6 py-4">
-                   {{ $tache->ouvrier}}
+                   {{ $tache->responsable->nom}} {{ $tache->responsable->prenom}}
                 </td>
                
                 <td class="px-6 py-4">
