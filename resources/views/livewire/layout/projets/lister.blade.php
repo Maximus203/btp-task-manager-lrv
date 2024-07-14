@@ -1,4 +1,4 @@
-<!-- resources/views/livewire/layout/main.blade.php -->
+{{-- <!-- resources/views/livewire/layout/main.blade.php -->
 
 <div>
     <div class="mb-4 flex justify-end">
@@ -57,4 +57,60 @@
         })
     }
 </script>
+    </div> --}}
+<!-- resources/views/livewire/layout/projets/lister.blade.php -->
+<!-- resources/views/livewire/layout/projets/lister.blade.php -->
+
+<!-- resources/views/livewire/layout/projets/lister.blade.php -->
+
+<!-- resources/views/livewire/layout/projets/lister.blade.php -->
+
+<div class="mt-8">
+    <div class="mb-4 flex justify-end px-4">
+        <a href="{{ route('creer-projet') }}" type="button"
+           class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter
+            un projet</a>
     </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        @foreach ($projets as $projet)
+            <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <img class="w-full h-32 object-cover" src="{{ asset('images/btp.png') }}" alt="Image du projet">
+                <div class="p-4">
+                    <a href="{{ route('details-projet', ['id' => $projet->idProjet]) }}">
+                        <h3 class="text-lg font-bold mb-2 text-gray-900 hover:text-teal-500">{{ $projet->nomProjet }}</h3>
+                    </a>
+                    <p class="text-gray-700 mb-4">{{ $projet->description }}</p>
+                    <div class="flex justify-between items-center">
+                        <a href="{{ route('modifier-projet', ['id' => $projet->idProjet]) }}"
+                           class="text-blue-600 hover:text-blue-800 font-medium">Editer</a>
+                        <button onclick="confirmDelete({{ $projet->idProjet }})"
+                                class="text-red-600 hover:text-red-800 font-medium">Supprimer</button>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+                title: 'Êtes-vous sûr?',
+                text: "Vous ne pourrez pas revenir en arrière !",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonText: 'Annuler',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, supprimer!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    @this.confirmSupprimer(id);
+                }
+            })
+        }
+    </script>
+</div>
+

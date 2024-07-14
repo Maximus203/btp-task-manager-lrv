@@ -65,6 +65,7 @@ class Creer extends Component
         }
 
         $this->resetForm();
+        return redirect()->route('lister-projet');
     }
 
     private function resetForm()

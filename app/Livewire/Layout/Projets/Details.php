@@ -5,10 +5,10 @@ namespace App\Livewire\Layout\Projets;
 use Livewire\Component;
 use App\Models\Projet;
 
-
 class Details extends Component
 {
     public $idProjet;
+
     public function mount($id)
     {
         $this->idProjet = $id;

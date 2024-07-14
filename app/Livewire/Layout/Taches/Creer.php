@@ -49,6 +49,7 @@ class Creer extends Component
         ]);
 
         $this->resetForm();
+        return redirect()->route('lister-tache');
     }
 
     private function resetForm()

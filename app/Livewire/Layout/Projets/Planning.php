@@ -6,20 +6,24 @@ use App\Models\Projet;
 use App\Models\Tache;
 use Livewire\Component;
 
-
 class Planning extends Component
 {
-    // public $idProjet;
+    public $idProjet;
+    public $projet;
+    public $taches;
 
+    public function mount($id)
+    {
+        $this->idProjet = $id;
+        $this->projet = Projet::find($this->idProjet);
+        $this->taches = Tache::where('idProjet', $this->idProjet)->get();
+    }
 
-    // public function mount($id)
-    // {
-    //     $this->idProjet = $id;
-    // }
     public function render()
     {
-        // $taches = Projet::find($this->idProjet);
-        $taches = Tache::all();
-        return view('livewire.layout.projets.planning', ['taches' => $taches]);
+        return view('livewire.layout.projets.planning', [
+            'projet' => $this->projet,
+            'taches' => $this->taches,
+        ]);
     }
 }

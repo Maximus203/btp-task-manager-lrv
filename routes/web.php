@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Dashboard;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::view('modification-projet/{id}', 'pages.projets.modifier')->name('modifier-projet');
 
     Route::view('planning-projets/{id}', 'pages.projets.planning')->name('planning-projet');
-
 
     Route::view('creation-tache', 'pages.taches.creer')->name('creer-tache');
     Route::view('liste-tache', 'pages.taches.lister')->name('lister-tache');
