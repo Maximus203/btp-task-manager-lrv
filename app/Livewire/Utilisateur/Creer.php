@@ -47,7 +47,7 @@ class Creer extends Component
         $user = User::create($validated);
         event(new Registered($user));
         Mail::to($user->email)->queue(new WelcomeMail($user, $password));
-        $this->redirect(route('lister-projet'), navigate: true);
+        $this->redirect(route('lister-utilisateur'), navigate: true);
         $this->reset();
     }
 }

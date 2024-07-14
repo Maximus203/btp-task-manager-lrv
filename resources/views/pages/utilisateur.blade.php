@@ -5,14 +5,20 @@
                 {{ __('Créer utilisateur') }}
             @elseif (Request::route()->named('login'))
                 {{ __('Connexion') }}
+            @else
+                {{ __('Liste des utilisateurs') }}
             @endif
-
         </h2>
     </x-slot>
-    @if (Request::route()->named('register'))
-        @livewire('utilisateur.creer')
-    @elseif (Request::route()->named('login'))
-        @livewire('utilisateur.connexion')
-    @endif
 
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        @if (Request::route()->named('register'))
+            @livewire('utilisateur.creer')
+        @elseif (Request::route()->named('login'))
+            @livewire('utilisateur.connexion')
+        @else
+            <!-- Affichage de la liste des utilisateurs uniquement lorsque ce n'est ni la création ni la connexion -->
+            @livewire('utilisateur.lister')
+        @endif
+    </div>
 </x-app-layout>

@@ -32,5 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::view('liste-tache', 'pages.taches.lister')->name('lister-tache');
     Route::view('details-taches/{id}', 'pages.taches.details')->name('details-tache');
     Route::view('modification-tache/{id}', 'pages.taches.modifier')->name('modifier-tache');
+
+    Route::view('liste-utilisateur', 'pages.utilisateur')->name('lister-utilisateur');
 });
 require __DIR__ . '/auth.php';

@@ -7,10 +7,16 @@ use Livewire\Component;
 
 class Lister extends Component
 {
+    public $search = '';
+    public $projets;
+
     public function render()
     {
-        $projets = Projet::all();
-        return view('livewire.layout.projets.lister', ['projets' => $projets]);
+        $this->projets = Projet::where('nomProjet', 'like', '%' . $this->search . '%')
+            ->orWhere('description', 'like', '%' . $this->search . '%')
+            ->get();
+
+        return view('livewire.layout.projets.lister', ['projets' => $this->projets]);
     }
 
 

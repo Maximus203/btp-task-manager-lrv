@@ -33,6 +33,6 @@ class Projet extends Model
     }
     public function ouvriers()
     {
-        return $this->belongsToMany(User::class, 'projet_ouvrier')->withPivot('idRole');
+        return $this->belongsToMany(User::class, 'projets_ouvriers')->withPivot('idRole');
     }
 }
