@@ -10,9 +10,10 @@ class Lister extends Component
 
     public function render()
     {
-        $users = User::all();
+        $users = User::all()->sortBy('nom');
         return view('livewire.utilisateur.lister', compact('users'));
     }
+
     public function supprimer($userId)
     {
         $user = User::find($userId);
