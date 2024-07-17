@@ -25,7 +25,7 @@
             <!-- Ouvriers -->
              <div>
                 <label for="ouvrier" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Sélectionner un ouvrier</label>
-                <select id="ouvrier" wire:model.defer="ouvrier" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select aria-placeholder="l'ouvrier chargé de cette tache" id="ouvrier" wire:model.defer="ouvrier" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="" disabled>Choisir un ouvrier</option>
                     @foreach($ouvriers as $ouvrier)
                         <option value="{{ $ouvrier->id }}">{{ $ouvrier->nomcomplet }}</option>

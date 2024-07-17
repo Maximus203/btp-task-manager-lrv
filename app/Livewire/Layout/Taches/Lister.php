@@ -9,7 +9,7 @@ use Livewire\Component;
 class Lister extends Component
 {
     public $selectedProject = null;
-    public $projetIdToDelete = null;
+    public $tacheIdToDelete = null;
 
     public function render()
     {
@@ -31,15 +31,15 @@ class Lister extends Component
 
     public function confirmSupprimer($id)
     {
-        $this->projetIdToDelete = $id;
+        $this->tacheIdToDelete = $id;
         $this->supprimer($id);
     }
 
     public function supprimer($id)
     {
-        $projet = Tache::find($id);
-        if ($projet) {
-            $projet->delete();
+        $tache = Tache::find($id);
+        if ($tache) {
+            $tache->delete();
         }
     }
 }

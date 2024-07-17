@@ -9,7 +9,17 @@ class Tache extends Model
 {
     use HasFactory;
     protected $primaryKey = 'idTache';
-    protected $fillable = ['nomTache', 'description', 'dateDeDebut', 'dateDeFin', 'ouvrier', 'budget', 'idProjet', 'statut'];
+    protected $fillable = [
+        'nomTache',
+        'description',
+        'dateDeDebut',
+        'dateDeFin',
+        'ouvrier',
+        'budget',
+        'idProjet',
+        'statut',
+        'commentaire',
+    ];
 
     public function responsable()
     {

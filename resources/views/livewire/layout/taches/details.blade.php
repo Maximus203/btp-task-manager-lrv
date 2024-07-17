@@ -33,4 +33,25 @@
             </tbody>
         </table>
     </div>
+
+    <div class="mt-4">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Commentaires</h3>
+        <ul class="mt-2 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg shadow">
+            @foreach($commentaires as $commentaire)
+                <li class="mb-4 flex justify-between items-center">
+                    <p class="text-gray-700 dark:text-gray-300">{{ $commentaire }}</p>
+                    <button wire:click="deleteComment('{{ $commentaire }}')" class="mt-2 text-red-500 hover:text-red-700 focus:outline-none">Supprimer</button>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+    <div class="mt-4">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Ajouter un commentaire</h3>
+        <form wire:submit.prevent="submitComment">
+            <textarea wire:model="commentaire" class="w-full p-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" rows="3"></textarea>
+            @error('commentaire') <span class="text-red-500">{{ $message }}</span> @enderror
+            <button type="submit" class="mt-2 text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Soumettre</button>
+        </form>
+    </div>
 </div>

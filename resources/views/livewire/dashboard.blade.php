@@ -7,10 +7,19 @@
     <!-- Ajoutez vos feuilles de style et scripts ici -->
     <link href="https://unpkg.com/@flowbite/tailwindcss@latest/dist/flowbite.min.css" rel="stylesheet">
     <script src="https://unpkg.com/@flowbite/tailwindcss@latest/dist/flowbite.min.js"></script>
+    <style>
+        .status-indicator {
+            display: inline-block;
+            width: 15px; 
+            height: 15px; 
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body class="bg-white min-h-screen">
 
-    <!--  contenu principal  -->
+    <!-- contenu principal -->
     <main class="p-4">
         <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
             <!-- Partie 1/4 : Profil et Tâches -->
@@ -56,19 +65,27 @@
                         <div class="bg-white p-4 rounded-lg shadow-md mb-4">
                             <div class="flex items-center justify-between mb-2">
                                 <h4 class="text-lg font-semibold">{{ $tache->nomTache }}</h4>
-                                @if ($tache->statut === 'initial')
-                                    <span class="h-2 w-2 rounded-full bg-green-400 inline-block mx-1" title="Initial"></span>
-                                @elseif ($tache->statut === 'en_cours')
-                                    <span class="h-2 w-2 rounded-full bg-orange-400 inline-block mx-1" title="En cours"></span>
-                                @elseif ($tache->statut === 'terminer')
-                                    <span class="h-2 w-2 rounded-full bg-red-600 inline-block mx-1" title="Terminé"></span>
-                                @else
-                                    <span class="h-2 w-2 rounded-full bg-gray-400 inline-block mx-1" title="Autre"></span>
-                                @endif
                             </div>
                             <p class="text-gray-600 mb-2">Budget: {{ $tache->budget }}</p>
                             <p class="text-gray-600 mb-2">Description: {{ $tache->description }}</p>
-                            <p class="text-gray-600">Statut: {{ $tache->statut }}</p>
+                            <p class="text-gray-600 flex items-center"> <!-- Ajout de flex et items-center pour aligner le statut et le point -->
+                                <span class="status-indicator
+                                    @if ($tache->statut === 'initial') bg-green-400
+                                    @elseif ($tache->statut === 'en_cours') bg-orange-400
+                                    @elseif ($tache->statut === 'terminer') bg-red-600
+                                    @else bg-gray-400
+                                    @endif"></span> 
+                                Statut: 
+                                @if ($tache->statut === 'initial')
+                                    Initial
+                                @elseif ($tache->statut === 'en_cours')
+                                    En cours
+                                @elseif ($tache->statut === 'terminer')
+                                    Terminé
+                                @else
+                                    Autre
+                                @endif
+                            </p>
                         </div>
                     @endforeach
                     @php
