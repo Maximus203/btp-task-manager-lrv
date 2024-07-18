@@ -19,7 +19,6 @@ Route::view('/', 'welcome')->name('accueil');
 Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 Route::view('profile', 'profile')->middleware(['auth'])->name('profile');
 
-
 Route::middleware('auth')->group(function () {
     Route::view('liste-projet', 'pages.projets.lister')->name('lister-projet');
     Route::view('creation-projet', 'pages.projets.creer')->name('creer-projet');

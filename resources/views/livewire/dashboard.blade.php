@@ -10,8 +10,8 @@
     <style>
         .status-indicator {
             display: inline-block;
-            width: 15px; 
-            height: 15px; 
+            width: 10px; /* Augmenter la taille des points */
+            height: 10px; /* Augmenter la taille des points */
             border-radius: 50%;
             margin-right: 8px;
         }

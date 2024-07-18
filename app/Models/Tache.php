@@ -19,6 +19,7 @@ class Tache extends Model
         'idProjet',
         'statut',
         'commentaire',
+        'image',
     ];
 
     public function responsable()

@@ -54,4 +54,33 @@
             <button type="submit" class="mt-2 text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Soumettre</button>
         </form>
     </div>
+
+    <div class="mt-4">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Uploader une image</h3>
+        <form wire:submit.prevent="save">
+            <input type="file" wire:model="image" class="w-full p-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+            @error('image') <span class="text-red-500">{{ $message }}</span> @enderror
+            <button type="submit" class="mt-2 text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Upload</button>
+        </form>
+            <div class="mt-4">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Images uploadées</h3>
+                @if ($tache->image)
+                    @foreach (explode(',', $tache->image) as $index => $imagePath)
+                        <div class="relative w-full h-auto rounded-md shadow">
+                            <img src="{{ Storage::url($imagePath) }}" alt="Image de la tâche" class="w-full h-auto rounded-md shadow">
+                            <button wire:click="deleteImage({{ $index }})" class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 focus:outline-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x feather-sm">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    @endforeach
+                @else
+                    <p>Aucune image uploadée.</p>
+                @endif
+            </div>
+
+
+    </div>
 </div>
