@@ -44,7 +44,8 @@
 
             <!-- Statut -->
             <div class="w-full mb-5 group flex flex-row">
-                <label for="statut" class="block w-1/4 mb-2 text-sm font-medium text-gray-500">Statut</label>
+                <label for="statut" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Statut</label>
+               <br>
                 <div class="w-1/4">
                     <x-radio id="rounded-lg" wire:model="statut" rounded="lg" label="Initial" value="initial" xl />
                 </div>
@@ -59,19 +60,21 @@
 
             <!-- Dates -->
             <div>
+                <label class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Date de Début</label>
                 <input wire:model="dateDeDebut" type="date" name="dateDeDebut" id="dateDeDebut" placeholder="Date de début" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                 @error('dateDeDebut') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-
+<br>
+                <label class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Date de Fin</label>
                 <input wire:model="dateDeFin" type="date" name="dateDeFin" id="dateDeFin" placeholder="Date de fin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                 @error('dateDeFin') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
             <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Créer la tâche</button>
         </form>
 
-            <div>
+            {{-- <div>
                 <label for="svgFile" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Uploader un fichier SVG (optionnel)</label>
                 <input id="svgFile" type="file" wire:model="svgFile" accept=".svg" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 @error('svgFile') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
-            </div>
+            </div> --}}
     </div>
 </div>
