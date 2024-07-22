@@ -1,0 +1,399 @@
+/* Styles généraux */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    /* Pour éviter le défilement horizontal */
+}
+
+/* Diaporama */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    /* Ajuster la hauteur pour laisser de la place en dessous */
+    overflow: hidden;
+    margin-bottom: 30px;
+    /* Ajouter un espace sous le diaporama */
+}
+
+.mySlides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    /* Transition pour l'opacité */
+    background-size: cover;
+    background-position: center;
+    animation: zoom 20s infinite;
+}
+
+.mySlides.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Animation de zoom lent */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Style pour l'icône */
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    color: #fff;
+    /* Couleur du texte */
+    font-size: 2rem;
+    /* Taille plus grande */
+    padding: 10px;
+    /* Ajout de rembourrage pour une zone cliquable plus grande */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fond semi-transparent */
+    border: none;
+    /* Retirer la bordure */
+    border-radius: 50%;
+    /* Arrondir l'icône */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Changement de couleur au survol */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fond légèrement plus foncé pour le contraste */
+    padding: 10px;
+    z-index: 1000;
+    top: 60px;
+    left: 20px;
+    border-radius: 10px;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 165, 0, 0.2);
+    /* Orange pâle au survol */
+}
+
+.dropdown.active {
+    display: block;
+}
+
+/* Texte de bienvenue */
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    /* Align to the left */
+    transform: translateY(-50%);
+    /* Center vertically */
+    text-align: left;
+    /* Align text to the left */
+    color: #f8f9fa;
+    /* Light color for contrast */
+    font-size: 2.5rem;
+    /* Increased size */
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    /* Limit the width of the text block */
+}
+
+.welcome-text h1 {
+    font-size: 4rem;
+    /* Increased size */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    /* Texte en blanc pour contraster avec le fond sombre */
+}
+
+.welcome-text p {
+    font-size: 2rem;
+    /* Augmenter la taille pour une meilleure lisibilité */
+    font-weight: 400;
+}
+
+/* Styles pour les sections supplémentaires */
+.section {
+    padding: 40px;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 30px;
+    /* Ajouter un espace entre le diaporama et les sections */
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #003c8f;
+    /* Bleu foncé pour le texte */
+    font-weight: 700;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    /* Limiter la largeur du texte pour une meilleure lisibilité */
+    margin: 0 auto;
+    /* Centrer le texte */
+}
+
+/* Styles pour la section À propos de nous */
+.about-us {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    /* Fond blanc pour le cadre */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* Espace sous la section */
+    max-width: 1000px;
+    /* Largeur maximale du cadre */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #e0e0e0;
+    /* Bordure légère */
+}
+
+.about-section {
+    background-color: #edf4f9;
+    /* Bleu clair pour la section contact */
+    padding: 40px;
+    text-align: center;
+}
+
+.about-us img {
+    max-width: 400px;
+    /* Largeur maximale de l'image */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    /* Espace entre l'image et le texte */
+}
+
+.about-us-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Styles pour les cadres */
+/* Styles pour la section Nos Réalisations */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    /* Augmenter l'espace au-dessus pour aérer la section */
+    flex-wrap: wrap;
+    /* Pour s'adapter aux écrans plus petits */
+    padding: 20px;
+    /* Ajouter du padding pour l'aération */
+    background-color: #f7f9fc;
+    /* Fond légèrement gris clair pour une apparence professionnelle */
+    border-radius: 10px;
+    /* Bords arrondis pour un effet moderne */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Ombre plus subtile pour une apparence plus élégante */
+}
+
+.stats-card {
+    background-color: #ffffff;
+    /* Fond blanc pour les cartes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile pour les cartes */
+    padding: 20px;
+    width: 300px;
+    /* Largeur fixe des cadres */
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Transition pour l'animation */
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    /* Léger déplacement vers le haut au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Ombre plus prononcée au survol */
+}
+
+.stats-card h3 {
+    font-size: 1.8rem;
+    /* Taille légèrement réduite pour une meilleure lisibilité */
+    margin-bottom: 10px;
+    color: #003c8f;
+    /* Bleu foncé pour le texte */
+    font-weight: 600;
+    /* Légèrement plus gras pour le titre */
+}
+
+.stats-card p {
+    font-size: 1.1rem;
+    /* Réduire légèrement la taille du texte */
+    color: #555;
+    /* Gris foncé pour le texte */
+    line-height: 1.5;
+}
+
+/* Styles pour le pied de page */
+.footer {
+    background-color: #003c8f;
+    /* Bleu foncé pour le pied de page */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-logo {
+    width: 100px;
+    /* Ajustez la taille du logo selon vos besoins */
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.social-icon span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.social-icon:hover {
+    color: #ff6600;
+    /* Orange vif au survol */
+}
+
+.facebook i {
+    color: #3b5998;
+}
+
+.twitter i {
+    color: #1da1f2;
+}
+
+.instagram i {
+    color: #e1306c;
+}
+
+.footer-note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Style pour la section "Contact" */
+.contact-section {
+    background-color: #e3f2fd;
+    /* Bleu clair pour la section contact */
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #003c8f;
+    /* Bleu foncé pour le titre */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: #003c8f;
+    /* Bleu foncé pour les icônes */
+    margin-right: 10px;
+}
+
+.contact-item p {
+    margin: 0;
+}
+
+.contact-item a {
+    color: #003c8f;
+    /* Bleu foncé pour les liens */
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
