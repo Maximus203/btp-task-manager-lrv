@@ -3,6 +3,7 @@
 namespace App\Livewire\Layout\Taches;
 
 use App\Models\Tache;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -42,7 +43,12 @@ class Details extends Component
         ]);
 
         $tache = Tache::find($this->idTache);
-        $tache->commentaire = $this->commentaire;
+
+        // Vérifier le rôle de l'utilisateur
+        $userRole = Auth::user()->idRole;
+        $mention = $userRole === 4 ? ' (Commentaire du client)' : '';
+
+        $tache->commentaire = $this->commentaire . $mention;
         $tache->save();
 
         $this->commentaire = '';
@@ -98,13 +104,10 @@ class Details extends Component
 
         $tache->save();
 
-        $this->cheminImage = $cheminImage;
+        $this->imagePath = $tache->image; // Ajoutez cette ligne pour mettre à jour $imagePath
         $this->image = null;
-
-        // Émettre un événement pour mettre à jour les images du tableau de bord
-        $this->emitUp('imageAdded');
-        session()->flash('message', 'Image téléchargée avec succès !');
     }
+
 
 
     public function deleteImage($index)
@@ -122,7 +125,7 @@ class Details extends Component
         $tache->save();
 
         // Émettre un événement pour mettre à jour les images du tableau de bord
-        $this->emitUp('imageDeleted');
-        session()->flash('message', 'Image supprimée avec succès !');
+        // $this->emitUp('imageDeleted');
+        // session()->flash('message', 'Image supprimée avec succès !');
     }
 }
