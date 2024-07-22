@@ -1,4 +1,5 @@
 /* Styles généraux */
+<<<<<<< HEAD
 body,
 html {
     height: 100%;
@@ -6,17 +7,30 @@ html {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
     /* Pour éviter le défilement horizontal */
+=======
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Pour éviter le défilement horizontal */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 /* Diaporama */
 .slideshow-container {
     position: relative;
     width: 100%;
+<<<<<<< HEAD
     height: 70vh;
     /* Ajuster la hauteur pour laisser de la place en dessous */
     overflow: hidden;
     margin-bottom: 30px;
     /* Ajouter un espace sous le diaporama */
+=======
+    height: 70vh; /* Ajuster la hauteur pour laisser de la place en dessous */
+    overflow: hidden;
+    margin-bottom: 30px; /* Ajouter un espace sous le diaporama */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .mySlides {
@@ -26,8 +40,12 @@ html {
     width: 100%;
     height: 100%;
     opacity: 0;
+<<<<<<< HEAD
     transition: opacity 1s ease-in-out;
     /* Transition pour l'opacité */
+=======
+    transition: opacity 1s ease-in-out; /* Transition pour l'opacité */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     background-size: cover;
     background-position: center;
     animation: zoom 20s infinite;
@@ -43,11 +61,17 @@ html {
     0% {
         transform: scale(1);
     }
+<<<<<<< HEAD
 
     50% {
         transform: scale(1.1);
     }
 
+=======
+    50% {
+        transform: scale(1.1);
+    }
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     100% {
         transform: scale(1);
     }
@@ -60,6 +84,7 @@ html {
     left: 20px;
     z-index: 1000;
     cursor: pointer;
+<<<<<<< HEAD
     color: #fff;
     /* Couleur du texte */
     font-size: 2rem;
@@ -72,21 +97,37 @@ html {
     /* Retirer la bordure */
     border-radius: 50%;
     /* Arrondir l'icône */
+=======
+    color: #fff; /* Couleur du texte */
+    font-size: 2rem; /* Taille plus grande */
+    padding: 10px; /* Ajout de rembourrage pour une zone cliquable plus grande */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    border: none; /* Retirer la bordure */
+    border-radius: 50%; /* Arrondir l'icône */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .menu-icon:hover {
+<<<<<<< HEAD
     background-color: rgba(255, 255, 255, 0.1);
     /* Changement de couleur au survol */
+=======
+    background-color: rgba(255, 255, 255, 0.1); /* Changement de couleur au survol */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
+<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.8);
     /* Fond légèrement plus foncé pour le contraste */
+=======
+    background-color: rgba(0, 0, 0, 0.8); /* Fond légèrement plus foncé pour le contraste */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     padding: 10px;
     z-index: 1000;
     top: 60px;
@@ -102,8 +143,12 @@ html {
 }
 
 .dropdown-content a:hover {
+<<<<<<< HEAD
     background-color: rgba(255, 165, 0, 0.2);
     /* Orange pâle au survol */
+=======
+    background-color: rgba(255, 165, 0, 0.2); /* Orange pâle au survol */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .dropdown.active {
@@ -114,6 +159,7 @@ html {
 .welcome-text {
     position: absolute;
     top: 50%;
+<<<<<<< HEAD
     left: 10%;
     /* Align to the left */
     transform: translateY(-50%);
@@ -145,6 +191,29 @@ html {
 .welcome-text p {
     font-size: 2rem;
     /* Augmenter la taille pour une meilleure lisibilité */
+=======
+    left: 10%; /* Align to the left */
+    transform: translateY(-50%); /* Center vertically */
+    text-align: left; /* Align text to the left */
+    color: #f8f9fa; /* Light color for contrast */
+    font-size: 2.5rem; /* Increased size */
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Limit the width of the text block */
+}
+
+.welcome-text h1 {
+    font-size: 4rem; /* Increased size */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #ffffff; /* Texte en blanc pour contraster avec le fond sombre */
+}
+
+.welcome-text p {
+    font-size: 2rem; /* Augmenter la taille pour une meilleure lisibilité */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     font-weight: 400;
 }
 
@@ -153,15 +222,23 @@ html {
     padding: 40px;
     background-color: transparent;
     text-align: center;
+<<<<<<< HEAD
     margin-top: 30px;
     /* Ajouter un espace entre le diaporama et les sections */
+=======
+    margin-top: 30px; /* Ajouter un espace entre le diaporama et les sections */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+<<<<<<< HEAD
     color: #003c8f;
     /* Bleu foncé pour le texte */
+=======
+    color: #003c8f; /* Bleu foncé pour le texte */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     font-weight: 700;
 }
 
@@ -169,22 +246,32 @@ html {
     font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
+<<<<<<< HEAD
     max-width: 800px;
     /* Limiter la largeur du texte pour une meilleure lisibilité */
     margin: 0 auto;
     /* Centrer le texte */
+=======
+    max-width: 800px; /* Limiter la largeur du texte pour une meilleure lisibilité */
+    margin: 0 auto; /* Centrer le texte */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 /* Styles pour la section À propos de nous */
 .about-us {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     background-color: #ffffff;
     /* Fond blanc pour le cadre */
+=======
+    background-color: #ffffff; /* Fond blanc pour le cadre */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
+<<<<<<< HEAD
     margin-bottom: 30px;
     /* Espace sous la section */
     max-width: 1000px;
@@ -209,6 +296,24 @@ html {
     border-radius: 10px;
     margin-right: 20px;
     /* Espace entre l'image et le texte */
+=======
+    margin-bottom: 30px; /* Espace sous la section */
+    max-width: 1000px; /* Largeur maximale du cadre */
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #e0e0e0; /* Bordure légère */
+}
+.about-section {
+    background-color: #edf4f9; /* Bleu clair pour la section contact */
+    padding: 40px;
+    text-align: center;
+}
+.about-us img {
+    max-width: 400px; /* Largeur maximale de l'image */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px; /* Espace entre l'image et le texte */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .about-us-content {
@@ -222,6 +327,7 @@ html {
     display: flex;
     justify-content: center;
     gap: 20px;
+<<<<<<< HEAD
     margin-top: 50px;
     /* Augmenter l'espace au-dessus pour aérer la section */
     flex-wrap: wrap;
@@ -273,13 +379,53 @@ html {
     /* Réduire légèrement la taille du texte */
     color: #555;
     /* Gris foncé pour le texte */
+=======
+    margin-top: 50px; /* Augmenter l'espace au-dessus pour aérer la section */
+    flex-wrap: wrap; /* Pour s'adapter aux écrans plus petits */
+    padding: 20px; /* Ajouter du padding pour l'aération */
+    background-color: #f7f9fc; /* Fond légèrement gris clair pour une apparence professionnelle */
+    border-radius: 10px; /* Bords arrondis pour un effet moderne */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre plus subtile pour une apparence plus élégante */
+}
+
+.stats-card {
+    background-color: #ffffff; /* Fond blanc pour les cartes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile pour les cartes */
+    padding: 20px;
+    width: 300px; /* Largeur fixe des cadres */
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition pour l'animation */
+}
+
+.stats-card:hover {
+    transform: translateY(-5px); /* Léger déplacement vers le haut au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+.stats-card h3 {
+    font-size: 1.8rem; /* Taille légèrement réduite pour une meilleure lisibilité */
+    margin-bottom: 10px;
+    color: #003c8f; /* Bleu foncé pour le texte */
+    font-weight: 600; /* Légèrement plus gras pour le titre */
+}
+
+.stats-card p {
+    font-size: 1.1rem; /* Réduire légèrement la taille du texte */
+    color: #555; /* Gris foncé pour le texte */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     line-height: 1.5;
 }
 
 /* Styles pour le pied de page */
 .footer {
+<<<<<<< HEAD
     background-color: #003c8f;
     /* Bleu foncé pour le pied de page */
+=======
+    background-color: #003c8f; /* Bleu foncé pour le pied de page */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -296,8 +442,12 @@ html {
 }
 
 .footer-logo {
+<<<<<<< HEAD
     width: 100px;
     /* Ajustez la taille du logo selon vos besoins */
+=======
+    width: 100px; /* Ajustez la taille du logo selon vos besoins */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     margin-bottom: 10px;
 }
 
@@ -326,8 +476,12 @@ html {
 }
 
 .social-icon:hover {
+<<<<<<< HEAD
     color: #ff6600;
     /* Orange vif au survol */
+=======
+    color: #ff6600; /* Orange vif au survol */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .facebook i {
@@ -349,8 +503,12 @@ html {
 
 /* Style pour la section "Contact" */
 .contact-section {
+<<<<<<< HEAD
     background-color: #e3f2fd;
     /* Bleu clair pour la section contact */
+=======
+    background-color: #e3f2fd; /* Bleu clair pour la section contact */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     padding: 40px;
     text-align: center;
 }
@@ -358,8 +516,12 @@ html {
 .contact-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+<<<<<<< HEAD
     color: #003c8f;
     /* Bleu foncé pour le titre */
+=======
+    color: #003c8f; /* Bleu foncé pour le titre */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
 }
 
 .contact-info {
@@ -379,8 +541,12 @@ html {
 
 .contact-item i {
     font-size: 2rem;
+<<<<<<< HEAD
     color: #003c8f;
     /* Bleu foncé pour les icônes */
+=======
+    color: #003c8f; /* Bleu foncé pour les icônes */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     margin-right: 10px;
 }
 
@@ -389,11 +555,19 @@ html {
 }
 
 .contact-item a {
+<<<<<<< HEAD
     color: #003c8f;
     /* Bleu foncé pour les liens */
+=======
+    color: #003c8f; /* Bleu foncé pour les liens */
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a
     text-decoration: none;
 }
 
 .contact-item a:hover {
     text-decoration: underline;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fae4a6384dd23b101f6944c559e86f5f6210af6a

@@ -82,6 +82,37 @@
         </nav>
     @else
         @if (!request()->routeIs('login'))
+<<<<<<< HEAD
+        <nav class="bg-white border-teal-600 dark:bg-gray-900">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="images/logo.jpeg" class="h-20" alt="Flowbite Logo" /> <!-- Augmentation de la taille du logo -->
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hawel Kebe</span>
+                </a>
+                <div class="flex items-center space-x-6 rtl:space-x-reverse">
+                    <a href="tel:5541251234" class="text-sm text-gray-500 dark:text-white hover:underline">(+221) 78-868-67-85</a>
+                    <a href="{{ route('login') }}" class="text-sm text-black dark:text-blue-500 hover:underline bg-[#1da1f2] hover:bg-[#1a91da] px-4 py-2 rounded-full font-medium">Connexion</a> <!-- Stylisation du bouton -->
+                </div>
+            </div>
+        </nav>
+        <nav class="bg-gray-50 dark:bg-teal-700">
+            <div class="max-w-screen-xl px-4 py-3 mx-auto">
+                <div class="flex items-center">
+                    <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+                        <li>
+                            <a href="#" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="#about-us" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">A propos de nous</a>
+                        </li>
+                        <li>
+                            <a href="#statistics" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">Nos réalisations</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">Contact</a>
+                        </li>
+                    </ul>
+=======
             <nav class="bg-white border-teal-600 dark:bg-gray-900">
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
                     <a href="" class="flex items-center space-x-3 rtl:space-x-reverse group">
@@ -112,8 +143,11 @@
                             </li>
                         </ul>
                     </div>
+>>>>>>> eca9b093963e46b4b024fa43fdc3fd3a77ccd269
                 </div>
-            </nav>
+            </div>
+        </nav>
+        
         @endif
     @endauth
 </div>
