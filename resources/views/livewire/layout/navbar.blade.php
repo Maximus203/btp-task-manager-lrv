@@ -2,14 +2,14 @@
     @auth
         <nav class="bg-teal-500 border-teal-600 dark:bg-gray-900">
             <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-                <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="images/casque.jpg" class="h-8 rounded-full" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KebeKheweul</span>
+                <a  wire:click="logout" class="flex items-center space-x-3 rtl:space-x-reverse group">
+                    <img src="{{ asset('images/hk.png') }}" class="h-8 rounded-full" alt="Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white group-hover:text-teal-300 transition duration-300">HAWEL KEBE</span>
                 </a>
                 <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                         <span class="sr-only">Open user menu</span>
-                        <img class="w-8 h-8 rounded-full" src="images/user.png" alt="user photo">
+                        <img class="w-8 h-8 rounded-full" src="{{ asset('images/user.png') }}" alt="user photo">
                     </button>
                     <!-- Dropdown menu -->
                     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
@@ -84,9 +84,9 @@
         @if (!request()->routeIs('login'))
             <nav class="bg-white border-teal-600 dark:bg-gray-900">
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-                    <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <a href="" class="flex items-center space-x-3 rtl:space-x-reverse group">
+                        <img src="{{ asset('images/hk.png') }}" class="h-8" alt="Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white group-hover:text-teal-300 transition duration-300">HAWEL KEBE</span>
                     </a>
                     <div class="flex items-center space-x-6 rtl:space-x-reverse">
                         <a href="tel:5541251234" class="text-sm text-gray-500 dark:text-white hover:underline">(555) 412-1234</a>
@@ -102,13 +102,13 @@
                                 <a href="#" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
                             </li>
                             <li>
-                                <a href="#" class="text-gray-900 dark:text-white hover:underline">Company</a>
+                                <a href="#" class="text-gray-900 dark:text-white hover:underline">Services</a>
                             </li>
                             <li>
-                                <a href="#" class="text-gray-900 dark:text-white hover:underline">Team</a>
+                                <a href="#" class="text-gray-900 dark:text-white hover:underline">About Us</a>
                             </li>
                             <li>
-                                <a href="#" class="text-gray-900 dark:text-white hover:underline">Features</a>
+                                <a href="#" class="text-gray-900 dark:text-white hover:underline">Contact</a>
                             </li>
                         </ul>
                     </div>
