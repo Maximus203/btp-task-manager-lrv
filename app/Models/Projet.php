@@ -21,6 +21,7 @@ class Projet extends Model
         'chefProjet',
         'client',
         'projet_ouvrier',
+        'plan',
     ];
 
     public function chefDeProjet()

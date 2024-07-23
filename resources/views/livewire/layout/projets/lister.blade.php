@@ -64,7 +64,7 @@
 <!-- resources/views/livewire/layout/projets/lister.blade.php -->
 
 <!-- resources/views/livewire/layout/projets/lister.blade.php -->
-<div class="mt-8">
+<div style="width: 90%" class="container xl:container mx-auto mt-20 ml-40">
     <div class="flex items-center justify-between mb-4 px-4">
         <div class="w-full md:w-auto">
             <form>

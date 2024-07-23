@@ -1,5 +1,5 @@
+<div style="width: 90%" class="container xl:container mx-auto mt-20 ml-40">
 <div class="p-6 mt-8 bg-white dark:bg-gray-800 sm:rounded-lg shadow-md">
-
     <div class="mb-4 flex justify-between items-center">
         <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Gestion des Tâches</h2>
         <a href="{{ route('creer-tache') }}" type="button"
@@ -53,4 +53,5 @@
             </tbody>
         </table>
     </div>
+</div>
 </div>

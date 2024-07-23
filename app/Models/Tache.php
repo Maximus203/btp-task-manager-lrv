@@ -20,6 +20,7 @@ class Tache extends Model
         'statut',
         'commentaire',
         'image',
+        'rapport',
     ];
 
     public function responsable()

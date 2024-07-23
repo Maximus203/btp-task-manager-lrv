@@ -1,6 +1,6 @@
+<div style="width: 80%" class="container xl:container mx-auto mt-20 ml-64">
 <div class="mt-8">
     <!-- resources/views/livewire/layout/taches/lister.blade.php -->
-
     <div class="mb-4 flex justify-between items-center px-4">
         <div class="w-1/3">
             <label for="projectFilter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Filtrer par projet</label>
@@ -55,4 +55,5 @@
             })
         }
     </script>
+</div>
 </div>

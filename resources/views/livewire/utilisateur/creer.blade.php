@@ -1,4 +1,6 @@
 <div class="max-w-sm mx-auto p-6 bg-white rounded-lg shadow-lg mt-10">
+    <b><i><h3 style="text-align: center">Formulaire d'ajout d'utilisateur</h3></i></b>
+
     <form class="space-y-6" wire:submit="register">
         <div>
             <div class="flex items-center">

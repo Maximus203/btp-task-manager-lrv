@@ -1,4 +1,4 @@
-<div>
+<div style="width: 80%" class="container xl:container mx-auto mt-20 ml-64">
     <!-- Tableau des utilisateurs -->
     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
         <thead class="bg-gray-50 dark:bg-gray-800">
