@@ -1,24 +1,31 @@
 <div style="width: 80%" class="container xl:container mx-auto mt-10 ml-60">
-    <div class="mt-8">
-        <!-- resources/views/livewire/layout/taches/lister.blade.php -->
-        <div class="mb-4 flex justify-between items-center px-4">
-            <div class="w-1/3">
-                <label for="projectFilter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Filtrer par projet</label>
-                <select wire:model="selectedProject" id="projectFilter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-100 dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="">Tous les projets</option>
-                    @foreach ($projets as $projet)
-                        <option value="{{ $projet->id }}">{{ $projet->nomProjet }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <a href="{{ route('creer-tache') }}" type="button"
-               class="text-white bg-gradient-to-r from-[#003c8f] via-[#004bb8] to-[#0061f2] hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-[#003c8f] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter
-                une tâche</a>
+    <div class="mb-4 flex flex-col items-start px-4">
+        <!-- Champ de recherche -->
+        <div class="w-full mb-4">
+            <label for="search" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Recherche</label>
+            <input type="text" id="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-100 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Rechercher des tâches...">
         </div>
+    
+        <!-- Filtre par projet -->
+        <div class="w-full mb-4">
+            <label for="projectFilter" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Filtrer par projet</label>
+            <select id="projectFilter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-100 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="">Tous les projets</option>
+                @foreach ($projets as $projet)
+                    <option value="{{ $projet->idProjet }}">{{ $projet->nomProjet }}</option>
+                @endforeach
+            </select>
+        </div>
+                    <a href="{{ route('creer-tache') }}" type="button"
+               class="bg-blue-400 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Ajouter
+                une tâche</a>
+    </div>
+    
 
+        <!-- Affichage des tâches -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
             @foreach ($taches as $tache)
-                <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">
+                <div class="task bg-white shadow-md rounded-lg overflow-hidden transform transition duration-500 hover:scale-105" data-id="{{ $tache->idProjet }}">
                     <div class="p-4 bg-white">
                         <div class="flex items-center justify-between">
                             <a href="{{ route('details-tache', ['id' => $tache->idTache]) }}" class="flex-1">
@@ -89,6 +96,45 @@
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
+            function filterTasks() {
+    const searchInput = document.getElementById('search');
+    const projectFilter = document.getElementById('projectFilter');
+    const tasks = document.querySelectorAll('.task');
+
+    function applyFilters() {
+      const searchQuery = searchInput.value.toLowerCase();
+      const selectedProject = projectFilter.value;
+
+      tasks.forEach(task => {
+        const taskProjectId = task.getAttribute('data-id');
+        const taskTitle = task.querySelector('h3').innerText.toLowerCase();
+
+        const matchesSearch = taskTitle.includes(searchQuery);
+        const matchesProject = selectedProject === '' || taskProjectId === selectedProject;
+
+        if (matchesSearch && matchesProject) {
+          task.style.display = 'block';
+        } else {
+          task.style.display = 'none';
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    projectFilter.addEventListener('change', applyFilters);
+
+    // Initial filter application
+    applyFilters();
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    filterTasks();
+  });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                filterTasksByProject();
+            });
+
             function confirmDelete(id) {
                 Swal.fire({
                     title: 'Êtes-vous sûr?',

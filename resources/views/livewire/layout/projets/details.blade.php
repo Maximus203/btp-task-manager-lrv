@@ -16,7 +16,7 @@
             </li>
         </ul>
         <a href="{{ route('lister-projet') }}" type="button"
-            class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-transform transform hover:scale-105">
+           class="bg-blue-400 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             Retour à la liste des projets
         </a>
     </div>

@@ -12,7 +12,7 @@ html {
 .slideshow-container {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     /* Ajuster la hauteur pour laisser de la place en dessous */
     overflow: hidden;
     margin-bottom: 30px;
@@ -342,10 +342,6 @@ html {
     color: #e1306c;
 }
 
-.footer-note {
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
 
 /* Style pour la section "Contact" */
 .contact-section {
@@ -395,5 +391,170 @@ html {
 }
 
 .contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Ajoutez ces styles à votre fichier CSS existant */
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.logo-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-note {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* Styles pour la section Nos Services */
+#services {
+    background-color: #f7f9fc;
+    padding: 40px;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #003c8f;
+    /* Bleu foncé pour le titre */
+    font-weight: 700;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    /* Largeur des éléments de service */
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Transition pour l'animation */
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    /* Léger déplacement vers le haut au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Ombre plus prononcée au survol */
+}
+
+.service-item i {
+    font-size: 2rem;
+    color: #003c8f;
+    /* Bleu foncé pour les icônes */
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #003c8f;
+    /* Bleu foncé pour le titre */
+    font-weight: 600;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #555;
+    /* Gris foncé pour le texte */
+    line-height: 1.5;
+}
+
+.stats-card {
+    background-color: #ffffff;
+    /* Fond blanc pour les cartes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombre subtile pour les cartes */
+    padding: 20px;
+    width: 300px;
+    /* Largeur fixe des cadres */
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Transition pour l'animation */
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    /* Léger déplacement vers le haut au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Ombre plus prononcée au survol */
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #003c8f;
+    /* Bleu foncé pour le texte */
+    transition: opacity 0.5s ease-in-out;
+    /* Transition pour l'opacité */
+}
+
+
+
+.footer-column {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+
+}
+
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.quick-links a:hover {
     text-decoration: underline;
 }

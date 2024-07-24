@@ -337,22 +337,22 @@
             <div class="flex flex-col h-full">
                 <div class="flex flex-col items-start p-4 space-y-4">
                     @if (Auth::user()->idRole == 4)
-                        <a href="{{ route('dashboard') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                        <a href="{{ route('dashboard') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-300">
                             <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
                         </a>
                     @elseif (Auth::user()->idRole == 3)
-                        <a href="{{ route('lister-tache') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                        <a href="{{ route('lister-tache') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-300">
                             <img src="{{ asset('images/tache.png') }}" class="h-6 mr-2" alt=""> Taches
                         </a>
                     @else
-                        <a href="{{ route('lister-projet') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                        <a href="{{ route('lister-projet') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-blue-400">
                             <img src="{{ asset('images/projet.png') }}" class="h-6 mr-2" alt=""> Projets
                         </a>
-                        <a href="{{ route('lister-tache') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                        <a href="{{ route('lister-tache') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-blue-400">
                             <img src="{{ asset('images/tache.png') }}" class="h-6 mr-2" alt=""> Taches
                         </a>
                         @if (Auth::user()->idRole == 1 || Auth::user()->idRole == 2)
-                            <a href="{{ route('lister-utilisateur') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                            <a href="{{ route('lister-utilisateur') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-blue-400">
                                 <i class="fas fa-user mr-2"></i> Utilisateur
                             </a>
                         @endif
@@ -360,7 +360,6 @@
                 </div>
             </div>
         </aside>
-
         <!-- Contenu Principal -->
         <main class="pt-16 pl-64">
             <!-- Votre contenu principal ici -->
@@ -368,24 +367,25 @@
         </main>
     @else
         @if (!request()->routeIs('login'))
-        <nav class="bg-white border-teal-600 dark:bg-gray-900">
-            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="images/logo.jpeg" class="h-20" alt="Flowbite Logo" /> <!-- Augmentation de la taille du logo -->
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hawel Kebe</span>
+        <nav class="bg-white border-blue-400 dark:bg-gray-900">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-1"> <!-- Réduction supplémentaire du padding -->
+                <a href="#" class="flex items-center space-x-1 rtl:space-x-reverse"> <!-- Réduction supplémentaire de l'espace entre les éléments -->
+                    <img src="images/logo.jpeg" class="h-12" alt="Flowbite Logo" /> <!-- Réduction supplémentaire de la hauteur de l'image -->
+                    <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Hawel Kebe</span> <!-- Réduction supplémentaire de la taille du texte -->
                 </a>
-                <div class="flex items-center space-x-6 rtl:space-x-reverse">
-                    <a href="tel:5541251234" class="text-sm text-gray-500 dark:text-white hover:underline">(+221) 78-868-67-85</a>
-                    <a href="{{ route('login') }}" class="text-sm text-black dark:text-blue-500 hover:underline bg-[#1da1f2] hover:bg-[#1a91da] px-4 py-2 rounded-full font-medium">Connexion</a> <!-- Stylisation du bouton -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse"> <!-- Réduction supplémentaire de l'espace entre les éléments -->
+                    <a href="tel:5541251234" class="text-xs text-gray-500 dark:text-white hover:underline">(+221) 78-868-67-85</a> <!-- Réduction de la taille du texte -->
+                    <a href="{{ route('login') }}" class="text-xs text-black dark:text-blue-500 hover:underline bg-[#1da1f2] hover:bg-[#1a91da] px-2 py-1 rounded-full font-medium">Connexion</a> <!-- Réduction supplémentaire du padding du bouton et de la taille du texte -->
                 </div>
             </div>
         </nav>
-        <nav class="bg-gray-50 dark:bg-teal-700">
+
+        <nav class="bg-gray-100 dark:bg-blue-500">
             <div class="max-w-screen-xl px-4 py-3 mx-auto">
                 <div class="flex items-center">
                     <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                         <li>
-                            <a href="#" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">Accueil</a>
+                            <a href="#accueil" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">Accueil</a>
                         </li>
                         <li>
                             <a href="#about-us" class="text-gray-900 dark:text-white hover:underline px-3 py-2 rounded-lg">A propos de nous</a>

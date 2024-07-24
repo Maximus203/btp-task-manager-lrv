@@ -87,7 +87,7 @@
     <div style="width: 98%" class="overflow-x-auto bg-[#edf4f9] p-6 rounded-lg shadow-lg">
         <div class="text-right mb-4">
             <a href="{{ route('register') }}" type="button"
-                class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+               class="bg-blue-400 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                 Ajouter un utilisateur
             </a>
         </div>

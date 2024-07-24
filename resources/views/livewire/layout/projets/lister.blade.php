@@ -1,4 +1,3 @@
-<!-- resources/views/livewire/layout/projets/lister.blade.php -->
 <div style="width: 90%" class="container xl:container mx-auto mt-10 ml-40">
     <div class="flex items-center justify-between mb-4 px-4">
         <div class="w-full md:w-auto">
@@ -13,15 +12,13 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <input wire:model="search" type="text" id="table-search"
-                        class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-[#e7f1f8] focus:ring-[#003c8f] focus:border-[#003c8f] dark:bg-[#f7f9fc] dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-[#003c8f] dark:focus:border-[#003c8f]"
-                        placeholder="Rechercher...">
+                    <input wire:model="search" type="text" id="table-search" class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-[#e7f1f8] focus:ring-[#003c8f] focus:border-[#003c8f] dark:bg-[#f7f9fc] dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-[#003c8f] dark:focus:border-[#003c8f]" placeholder="Rechercher...">
                 </div>
             </form>
         </div>
         <div>
             <a href="{{ route('creer-projet') }}" type="button"
-                class="text-white bg-gradient-to-r from-[#003c8f] via-[#003c8f] to-[#003c8f] hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-[#003c8f] dark:focus:ring-[#003c8f] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter
+                class="bg-blue-400 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Ajouter
                 un projet</a>
         </div>
     </div>
@@ -33,7 +30,7 @@
             </div>
         @else
             @foreach ($projets as $projet)
-                <div class="bg-[#f7f9fc] shadow-md rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105">
+                <div class="projet-item bg-[#f7f9fc] shadow-md rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105">
                     <div class="p-4">
                         <!-- Status Bar -->
                         <div class="absolute top-4 right-4">
@@ -87,13 +84,13 @@
                         </div>
 
                         <a href="{{ route('details-projet', ['id' => $projet->idProjet]) }}">
-                            <h3 class="text-lg font-bold mb-2 text-[#003c8f] hover:text-teal-500">{{ $projet->nomProjet }}</h3>
+                            <h3 class="text-lg font-bold mb-2 text-[#003c8f] hover:text-blue-400">{{ $projet->nomProjet }}</h3>
                         </a>
                         <p class="text-gray-700 mb-4">{{ $projet->description }}</p>
 
                         <div class="flex justify-between items-center">
                             <a href="{{ route('modifier-projet', ['id' => $projet->idProjet]) }}"
-                                class="text-[#003c8f] hover:text-teal-600 font-medium">Editer</a>
+                                class="text-[#003c8f] hover:text-blue-400 font-medium">Editer</a>
                             <button onclick="confirmDelete({{ $projet->idProjet }})"
                                class="text-red-400 hover:text-red-600 font-medium">Supprimer</button>
                         </div>
@@ -102,23 +99,45 @@
             @endforeach
         @endif
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function confirmDelete(id) {
             Swal.fire({
-                    title: 'Êtes-vous sûr?',
-                    text: "Vous ne pourrez pas revenir en arrière !",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#003c8f',
-                    cancelButtonText: 'Annuler',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Oui, supprimer!'
+                title: 'Êtes-vous sûr?',
+                text: "Vous ne pourrez pas revenir en arrière!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#003c8f',
+                cancelButtonText: 'Annuler',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, supprimer!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    @this.confirmSupprimer(id);
+                    @this.call('confirmSupprimer', id); // Appel correct de la méthode Livewire
                 }
-            })
+            });
         }
+    </script>
+    
+    <!-- JavaScript pour la recherche -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('table-search');
+            const tableRows = document.querySelectorAll('.grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 > .projet-item');
+
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                tableRows.forEach((row) => {
+                    const projectName = row.querySelector('h3') ? row.querySelector('h3').textContent.toLowerCase() : '';
+                    const projectDescription = row.querySelector('p') ? row.querySelector('p').textContent.toLowerCase() : '';
+                    if (projectName.includes(searchTerm) || projectDescription.includes(searchTerm)) {
+                        row.style.display = 'block';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
     </script>
 </div>

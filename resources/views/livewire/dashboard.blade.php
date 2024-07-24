@@ -14,26 +14,19 @@
             border-radius: 50%;
             margin-right: 8px;
         }
-        .btn-details {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #fff;
-            background: linear-gradient(to right, #38bdf8, #0ea5e9);
-            border-radius: 0.375rem;
-            text-align: center;
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        .btn-details:hover {
-            background: linear-gradient(to right, #0ea5e9, #38bdf8);
-            transform: scale(1.05);
-        }
-        .btn-details:focus {
-            outline: 2px solid #0ea5e9;
-            outline-offset: 2px;
-        }
+.btn-details {
+    display: inline-block;
+    background-color: #76A9FA;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #1a91da; /* Couleur plus foncée au survol */
+}
     </style>
 </head>
 <body class="bg-white min-h-screen">
