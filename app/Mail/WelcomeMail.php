@@ -29,11 +29,14 @@ class WelcomeMail extends Mailable
      */
     public function envelope(): Envelope
     {
+        $mailUsername = env('MAIL_USERNAME', 'no-reply@example.com'); // utilisez une valeur par défaut ici
+
         return new Envelope(
-            from: new Address(env('MAIL_USERNAME'), 'Task Manager BTP'),
+            from: new Address($mailUsername, 'Task Manager BTP'),
             subject: 'Bienvenue sur notre application',
         );
     }
+
 
     /**
      * Get the message content definition.

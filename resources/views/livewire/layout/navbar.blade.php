@@ -276,17 +276,15 @@
     </script>
 </div> --}}
 
-
-
 <div class="relative">
     @auth
         <!-- Navbar Horizontale -->
-        <nav class="bg-teal-500 border-teal-600 dark:bg-gray-900 fixed top-0 left-0 w-full z-30">
+        <nav class="bg-[#9ecaea] border-[#b4d8f2] fixed top-0 left-0 w-full z-30 shadow-md">
             <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
                 <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <a wire:click="logout" class="flex items-center space-x-3 rtl:space-x-reverse group">
+                    <a wire:click="logout" class="flex items-center space-x-3 rtl:space-x-reverse group cursor-pointer">
                         <img src="{{ asset('images/hk.png') }}" class="h-8 rounded-full" alt="Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white group-hover:text-teal-300 transition duration-300">HAWEL KEBE</span>
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white group-hover:text-[#edf4f9] transition duration-300">HAWEL KEBE</span>
                     </a>
                 </div>
                 <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -333,20 +331,31 @@
             </div>
         </nav>
 
+
         <!-- Barre Latérale Verticale -->
         <aside style="width: 15%" class="fixed top-16 left-0 h-full w-64 bg-gray-800 text-white z-20">
             <div class="flex flex-col h-full">
                 <div class="flex flex-col items-start p-4 space-y-4">
+                    @if (Auth::user()->idRole == 4)
+                        <a href="{{ route('dashboard') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                            <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                        </a>
+                    @elseif (Auth::user()->idRole == 3)
+                        <a href="{{ route('lister-tache') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                            <img src="{{ asset('images/tache.png') }}" class="h-6 mr-2" alt=""> Taches
+                        </a>
+                    @else
                         <a href="{{ route('lister-projet') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
                             <img src="{{ asset('images/projet.png') }}" class="h-6 mr-2" alt=""> Projets
                         </a>
                         <a href="{{ route('lister-tache') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
                             <img src="{{ asset('images/tache.png') }}" class="h-6 mr-2" alt=""> Taches
                         </a>
-                    @if (Auth::user()->idRole == 1 || Auth::user()->idRole == 2)
-                        <a href="{{ route('register') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
-                            <i class="fas fa-user mr-2"></i>Utilisateur
-                        </a>
+                        @if (Auth::user()->idRole == 1 || Auth::user()->idRole == 2)
+                            <a href="{{ route('lister-utilisateur') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-teal-700">
+                                <i class="fas fa-user mr-2"></i> Utilisateur
+                            </a>
+                        @endif
                     @endif
                 </div>
             </div>

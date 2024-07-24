@@ -1,70 +1,5 @@
-{{-- <!-- resources/views/livewire/layout/main.blade.php -->
-
-<div>
-    <div class="mb-4 flex justify-end">
-        <a href="{{ route('creer-projet') }}" type="button"
-            class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter
-            un projet</a>
-    </div>
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">Nom du Projet</th>
-                        <th scope="col" class="px-6 py-3">Chef de projet</th>
-                        <th scope="col" class="px-6 py-3">Status</th>
-                        <th scope="col" class="px-6 py-3">Client</th>
-                        <th scope="col" class="px-6 py-3">Action</th>
-                    </tr>
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                </thead>
-
-                <tbody>
-
-                    @foreach ($projets as $projet)
-                        <tr
-                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <td class="px-6 py-4"><a href= "{{ route('details-projet',["id"=>$projet->idProjet]) }}">{{ $projet->nomProjet }}</a></td>
-                            <td class="px-6 py-4">{{ $projet->chefDeProjet->prenom }} {{ $projet->chefDeProjet->nom }}
-                            </td>
-                            <td class="px-6 py-4">{{ $projet->statut }}</td>
-                            <td class="px-6 py-4">{{ $projet->clientProjet->prenom }} {{ $projet->clientProjet->nom }}
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href= "{{ route('modifier-projet',["id"=>$projet->idProjet]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>
-<button onclick="confirmDelete({{ $projet->idProjet }})" class="font-medium text-red-600 dark:text-red-500 hover:underline">Supprimer</button>                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-
-        </div>
-        <script>
-    function confirmDelete(id) {
-        Swal.fire({
-            title: 'Êtes-vous sûr?',
-            text: "Vous ne pourrez pas revenir en arrière !",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Oui, supprimer!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                @this.confirmSupprimer(id);
-            }
-        })
-    }
-</script>
-    </div> --}}
 <!-- resources/views/livewire/layout/projets/lister.blade.php -->
-<!-- resources/views/livewire/layout/projets/lister.blade.php -->
-
-<!-- resources/views/livewire/layout/projets/lister.blade.php -->
-
-<!-- resources/views/livewire/layout/projets/lister.blade.php -->
-<div style="width: 90%" class="container xl:container mx-auto mt-20 ml-40">
+<div style="width: 90%" class="container xl:container mx-auto mt-10 ml-40">
     <div class="flex items-center justify-between mb-4 px-4">
         <div class="w-full md:w-auto">
             <form>
@@ -79,14 +14,14 @@
                         </svg>
                     </div>
                     <input wire:model="search" type="text" id="table-search"
-                        class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-[#e7f1f8] focus:ring-[#003c8f] focus:border-[#003c8f] dark:bg-[#f7f9fc] dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-900 dark:focus:ring-[#003c8f] dark:focus:border-[#003c8f]"
                         placeholder="Rechercher...">
                 </div>
             </form>
         </div>
         <div>
             <a href="{{ route('creer-projet') }}" type="button"
-                class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter
+                class="text-white bg-gradient-to-r from-[#003c8f] via-[#003c8f] to-[#003c8f] hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-[#003c8f] dark:focus:ring-[#003c8f] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Ajouter
                 un projet</a>
         </div>
     </div>
@@ -94,47 +29,91 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         @if ($projets->isEmpty())
             <div class="col-span-full px-4 py-8 text-center">
-                <p class="text-gray-600 dark:text-gray-400">Aucun projet trouvé pour "{{ $search }}".</p>
+                <p class="text-[#003c8f] dark:text-gray-400">Aucun projet trouvé pour "{{ $search }}".</p>
             </div>
         @else
             @foreach ($projets as $projet)
-                <!-- ... -->
+                <div class="bg-[#f7f9fc] shadow-md rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105">
+                    <div class="p-4">
+                        <!-- Status Bar -->
+                        <div class="absolute top-4 right-4">
+                            <div class="relative w-24 h-2 rounded-full bg-gray-300">
+                                <div class="absolute top-0 left-0 h-2 rounded-full"
+                                    style="
+                                    width: @switch($projet->statut)
+                                        @case('initial')
+                                            10%; 
+                                            @break
+                                        @case('en_cours')
+                                            50%; 
+                                            @break
+                                        @case('terminer')
+                                            100%; 
+                                            @break
+                                        @default
+                                            80%; 
+                                    @endswitch
+                                    background-color: @switch($projet->statut)
+                                        @case('initial')
+                                            #f44336; 
+                                            @break
+                                        @case('en_cours')
+                                            #ff9800; 
+                                            @break
+                                        @case('terminer')
+                                            #4caf50; 
+                                            @break
+                                        @default
+                                            #ff9855; 
+                                    @endswitch
+                                "
+                                ></div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-400">
+                                @switch($projet->statut)
+                                    @case('initial')
+                                        10%
+                                        @break
+                                    @case('en_cours')
+                                        50%
+                                        @break
+                                    @case('terminer')
+                                        100%
+                                        @break
+                                    @default
+                                        80%
+                                @endswitch
+                            </span>
+                        </div>
+
+                        <a href="{{ route('details-projet', ['id' => $projet->idProjet]) }}">
+                            <h3 class="text-lg font-bold mb-2 text-[#003c8f] hover:text-teal-500">{{ $projet->nomProjet }}</h3>
+                        </a>
+                        <p class="text-gray-700 mb-4">{{ $projet->description }}</p>
+
+                        <div class="flex justify-between items-center">
+                            <a href="{{ route('modifier-projet', ['id' => $projet->idProjet]) }}"
+                                class="text-[#003c8f] hover:text-teal-600 font-medium">Editer</a>
+                            <button onclick="confirmDelete({{ $projet->idProjet }})"
+                               class="text-red-400 hover:text-red-600 font-medium">Supprimer</button>
+                        </div>
+                    </div>
+                </div>
             @endforeach
         @endif
     </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-        @foreach ($projets as $projet)
-            <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">
-                <img class="w-full h-32 object-cover" src="{{ asset('images/btp.png') }}" alt="Image du projet">
-                <div class="p-4">
-                    <a href="{{ route('details-projet', ['id' => $projet->idProjet]) }}">
-                        <h3 class="text-lg font-bold mb-2 text-gray-900 hover:text-teal-500">{{ $projet->nomProjet }}</h3>
-                    </a>
-                    <p class="text-gray-700 mb-4">{{ $projet->description }}</p>
-                    <div class="flex justify-between items-center">
-                        <a href="{{ route('modifier-projet', ['id' => $projet->idProjet]) }}"
-                            class="text-blue-600 hover:text-blue-800 font-medium">Editer</a>
-                        <button onclick="confirmDelete({{ $projet->idProjet }})"
-                            class="text-red-600 hover:text-red-800 font-medium">Supprimer</button>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function confirmDelete(id) {
             Swal.fire({
-                title: 'Êtes-vous sûr?',
-                text: "Vous ne pourrez pas revenir en arrière !",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonText: 'Annuler',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Oui, supprimer!'
+                    title: 'Êtes-vous sûr?',
+                    text: "Vous ne pourrez pas revenir en arrière !",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#003c8f',
+                    cancelButtonText: 'Annuler',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui, supprimer!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     @this.confirmSupprimer(id);
@@ -143,4 +122,3 @@
         }
     </script>
 </div>
-

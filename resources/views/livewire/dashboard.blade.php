@@ -37,6 +37,7 @@
     </style>
 </head>
 <body class="bg-white min-h-screen">
+<div style="width: 80%" class="container xl:container mx-auto mt-05 ml-60">
 
     <main class="p-4">
 
@@ -48,7 +49,8 @@
                 @endforeach
             </select>
         </div>
-
+            <center><label for="projetSelect" class="block text-gray-700 font-bold mb-2">Dashboard du client</label></center>
+<br>
         <div class="flex bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="w-full md:w-1/4 bg-gray-100 p-4">
                 <div class="mb-4 text-center">
@@ -103,9 +105,9 @@
                                 <p class="text-gray-600 mb-2">Description: {{ $tache->description }}</p>
                                 <p class="text-gray-600 flex items-center">
                                     <span class="status-indicator
-                                        @if ($tache->statut === 'initial') bg-green-400
+                                        @if ($tache->statut === 'initial') bg-red-600
                                         @elseif ($tache->statut === 'en_cours') bg-orange-400
-                                        @elseif ($tache->statut === 'terminer') bg-red-600
+                                        @elseif ($tache->statut === 'terminer') bg-green-400
                                         @else bg-gray-400
                                         @endif"></span>
                                     Statut: {{ getStatutLabel($tache->statut) }}
@@ -178,5 +180,6 @@
             }
         });
     </script>
+</div>
 </body>
 </html>

@@ -20,11 +20,11 @@
                     Planning
                 </a>
             </li>
-            <li class="me-2">
+            {{-- <li class="me-2">
                 <a href="{{ route('lister-projet') }}" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300 transition-colors duration-200">
                     Liste des Projets
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 

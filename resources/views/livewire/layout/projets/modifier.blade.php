@@ -12,7 +12,6 @@
                 @endforeach
             @endif
         </div>
-
         <!-- Sélectionner un client -->
         <div>
             <label for="client" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Sélectionner un client</label>
