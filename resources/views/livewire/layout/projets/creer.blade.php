@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire d'ajout de projet</title>
-    <style>
-        body {
-            background-color: #edf4f9;
-            font-family: Arial, sans-serif;
-        }
-    </style>
-</head>
-<body>
-    <div class="max-w-md mx-auto p-8 bg-white rounded-lg shadow-lg mt-19 ml-120">
-        <h3 class="text-center text-2xl font-bold text-[#003c8f] mb-6">Formulaire d'ajout de projet</h3>
+<div class="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-lg mt-10">
+    <b><i><h3 style="text-align: center">Formulaire d'ajout de projet</h3></i></b>
+    <br>
         <form class="space-y-6" wire:submit.prevent="submit">
+    
             <!-- Nom du projet -->
             <div>
-                <label for="nomProjet" class="block text-sm font-medium text-[#003c8f] mb-1">Nom du projet</label>
-                <input type="text" name="nomProjet" id="nomProjet" wire:model.blur="nomProjet" class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5" placeholder="Saisir le nom du projet" required />
+                <label for="nomProjet" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Nom du projet</label>
+                <input type="text" name="nomProjet" id="nomProjet" wire:model.blur="nomProjet" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisir le nom du projet" required />
                 @if ($errors->get("nomProjet"))
                     @foreach ($errors->get("nomProjet") as $error)
                         <span class="text-red-500 text-sm">{{ $error }}</span>
                     @endforeach
                 @endif
             </div>
-
+    
             <!-- Sélectionner un client -->
             <div>
-                <label for="client" class="block text-sm font-medium text-[#003c8f] mb-1">Sélectionner un client</label>
-                <select id="client" wire:model="client" required class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5">
-                    <option value="" disabled selected>Sélectionner un client</option>
+                <label for="client" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Sélectionner un client</label>
+                <select id="client" wire:model="client" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Sélectionner un client</option>
                     @foreach($clients as $client)
                         <option value="{{ $client->id }}">{{ $client->nomcomplet }}</option>
                     @endforeach
@@ -41,12 +29,12 @@
                     @endforeach
                 @endif
             </div>
-
+    
             <!-- Sélectionner un chef de projet -->
             <div>
-                <label for="chefProjet" class="block text-sm font-medium text-[#003c8f] mb-1">Sélectionner un chef de projet</label>
-                <select id="chefProjet" wire:model="chefProjet" required class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5">
-                    <option value="" disabled selected>Sélectionner un chef de projet</option>
+                <label for="chefProjet" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Sélectionner un chef de projet</label>
+                <select id="chefProjet" wire:model="chefProjet" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Sélectionner un chef de projet</option>
                     @foreach($chefProjets as $chefProjet)
                         <option value="{{ $chefProjet->id }}">{{ $chefProjet->nomcomplet }}</option>
                     @endforeach
@@ -57,48 +45,48 @@
                     @endforeach
                 @endif
             </div>
-
             <!-- Budget -->
+    
             <div>
-                <label for="budget" class="block text-sm font-medium text-[#003c8f] mb-1">Budget</label>
-                <input type="number" name="budget" id="budget" wire:model.blur="budget" class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5" placeholder="Saisir le budget" required />
+                <label for="budget" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">budget</label>
+                <input type="number" name="budget" id="budget" wire:model.blur="budget" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisir le nom du projet" required />
                 @if ($errors->get("budget"))
                     @foreach ($errors->get("budget") as $error)
                         <span class="text-red-500 text-sm">{{ $error }}</span>
                     @endforeach
                 @endif
             </div>
-
+    
             <!-- Sélectionner des ouvriers -->
             <div>
-                <label for="ouvriers" class="block text-sm font-medium text-[#003c8f] mb-1">Sélectionner des ouvriers</label>
+                <label for="ouvriers" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Sélectionner des ouvriers</label>
                 <div wire:ignore>
-                    <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-gray-700 border border-gray-300 rounded-lg hover:text-white hover:bg-[#003c8f] focus:ring-4 focus:outline-none focus:ring-[#003c8f] me-2 mb-2" type="button">
-                        Ajouter des ouvriers
-                        <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                        </svg>
-                    </button>
-
+     <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-gray-700 border border-gray-300 rounded-lg hover:text-white hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-500 dark:focus:ring-gray-800 me-2 mb-2" type="button">
+        Ajouter des ouvriers
+        <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+    </button>
+    
                     <!-- Dropdown menu -->
-                    <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60">
+                    <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
                         <div class="p-3">
                             <label for="input-group-search" class="sr-only">Ajouter des ouvriers</label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                     </svg>
                                 </div>
-                                <input type="text" id="input-group-search" class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full pl-10 p-2.5" placeholder="Chercher un ouvrier">
+                                <input type="text" id="input-group-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Chercher un ouvrier">
                             </div>
                         </div>
-                        <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700" aria-labelledby="dropdownSearchButton">
+                        <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownSearchButton">
                             @foreach($ouvriersListes as $ouvrier)
                                 <li>
-                                    <div class="flex items-center p-2 rounded hover:bg-gray-100">
-                                        <input id="checkbox-item-{{ $ouvrier->id }}" type="checkbox" wire:model="ouvriers" value="{{ $ouvrier->id }}" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                                        <label for="checkbox-item-{{ $ouvrier->id }}" class="ml-2 text-sm font-medium text-gray-900">{{ $ouvrier->nomcomplet }}</label>
+                                    <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                        <input id="checkbox-item-{{ $ouvrier->id }}" type="checkbox" wire:model="ouvriers" value="{{ $ouvrier->id }}" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                                        <label for="checkbox-item-{{ $ouvrier->id }}" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $ouvrier->nomcomplet }}</label>
                                     </div>
                                 </li>
                             @endforeach
@@ -111,69 +99,53 @@
                     @endforeach
                 @endif
             </div>
-
-            <!-- Statut -->
-            <div class="w-full mb-5 group flex flex-row">
-                <label for="statut" class="block w-1/4 mb-2 text-sm font-medium text-[#003c8f]">Statut</label>
+    
+            
+    
+           <div class="w-full mb-5 group flex flex-row">
+                <label for="statut" class="block w-1/4 mb-2 text-sm font-medium text-gray-500">Statut</label>
                 <div class="w-1/4">
-                    <input type="radio" id="initial" name="statut" wire:model="statut" value="initial" class="text-[#003c8f] focus:ring-[#003c8f]">
-                    <label for="initial" class="text-sm font-medium text-gray-900">Initial</label>
+                    <x-radio id="rounded-lg" wire:model="statut" rounded="lg" label="Initial" value="initial" xl />
                 </div>
                 <div class="w-1/4">
-                    <input type="radio" id="en_cours" name="statut" wire:model="statut" value="en_cours" class="text-[#003c8f] focus:ring-[#003c8f]">
-                    <label for="en_cours" class="text-sm font-medium text-gray-900">En cours</label>
+                    <x-radio id="rounded-lg" wire:model="statut" rounded="lg" label="En cours" value="en_cours" xl />
                 </div>
                 <div class="w-1/4">
-                    <input type="radio" id="terminer" name="statut" wire:model="statut" value="terminer" class="text-[#003c8f] focus:ring-[#003c8f]">
-                    <label for="terminer" class="text-sm font-medium text-gray-900">Terminer</label>
+                    <x-radio id="rounded-lg" wire:model="statut" rounded="lg" label="Terminé" value="terminer" xl />
                 </div>
-                @if ($errors->get("statut"))
+                 @if ($errors->get("statut"))
                     @foreach ($errors->get("statut") as $error)
                         <span class="text-red-500 text-sm">{{ $error }}</span>
                     @endforeach
                 @endif
             </div>
-
-            <!-- Date de début -->
+    
+    
+    
             <div>
-                <label for="dateDeDebut" class="block text-sm font-medium text-[#003c8f] mb-1">Date de début</label>
-                <input type="date" name="dateDeDebut" id="dateDeDebut" wire:model.blur="dateDeDebut" class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5" required />
-                @if ($errors->get("dateDeDebut"))
-                    @foreach ($errors->get("dateDeDebut") as $error)
-                        <span class="text-red-500 text-sm">{{ $error }}</span>
-                    @endforeach
-                @endif
+                <label class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Date de Début</label>
+                <input wire:model="dateDeDebut" type="date" name="dateDeDebut" id="dateDeDebut" placeholder="Date de début" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                @error('dateDeDebut') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+<br>
+                <label class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Date de Fin</label>
+                <input wire:model="dateDeFin" type="date" name="dateDeFin" id="dateDeFin" placeholder="Date de fin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                @error('dateDeFin') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
-
-            <!-- Date de fin -->
+    
+             <!-- Description -->
             <div>
-                <label for="dateDeFin" class="block text-sm font-medium text-[#003c8f] mb-1">Date de fin</label>
-                <input type="date" name="dateDeFin" id="dateDeFin" wire:model.blur="dateDeFin" class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5" required />
-                @if ($errors->get("dateDeFin"))
-                    @foreach ($errors->get("dateDeFin") as $error)
-                        <span class="text-red-500 text-sm">{{ $error }}</span>
-                    @endforeach
-                @endif
-            </div>
-
-            <!-- Description -->
-            <div>
-                <label for="description" class="block text-sm font-medium text-[#003c8f] mb-1">Description</label>
-                <textarea name="description" id="description" rows="4" wire:model.blur="description" class="bg-[#f7f9fc] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f] block w-full p-2.5" placeholder="Décrivez le projet" required></textarea>
+                <label for="description" class="block text-sm font-medium text-gray-900 dark:text-white mb-2">Description</label>
+                <textarea id="description" name="description" wire:model.blur="description" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Saisir la description du projet" required></textarea>
                 @if ($errors->get("description"))
                     @foreach ($errors->get("description") as $error)
                         <span class="text-red-500 text-sm">{{ $error }}</span>
                     @endforeach
                 @endif
             </div>
-
-            <!-- Submit button -->
-            <div class="text-center">
-                <button type="submit" class="w-full px-5 py-2.5 text-sm font-medium text-center text-white bg-[#003c8f] rounded-lg hover:bg-[#002d6e] focus:ring-4 focus:outline-none focus:ring-[#003c8f]">
-                    Ajouter le projet
-                </button>
+    
+            <!-- Bouton de soumission -->
+            <div class="flex justify-end">
+                <button type="submit" class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">  Enregistrer</button>
             </div>
         </form>
     </div>
-</body>
-</html>

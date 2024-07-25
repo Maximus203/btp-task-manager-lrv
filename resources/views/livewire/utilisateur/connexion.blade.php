@@ -16,36 +16,36 @@
             @endif
 
             <div class="relative mb-4">
-                <label for="floating_email" class="block text-sm font-medium text-[#003c8f] mb-1">Email</label>
+                <label for="floating_email" class="block text-sm font-medium text-[#071720] mb-1">Email</label>
                 <div class="flex items-center">
                     <img src="images/email.png" alt="Icone email" class="h-6 w-6 absolute left-3">
-                    <input wire:model="email" type="email" name="floating_email" id="floating_email" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-300 rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f]" placeholder=" " required />
+                    <input wire:model="email" type="email" name="floating_email" id="floating_email" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-100 rounded-lg focus:ring-[#FFA02C] focus:border-[#FFA02C]" placeholder=" " required />
                 </div>
             </div>
             @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
             <div class="relative mb-4">
-                <label for="floating_password" class="block text-sm font-medium text-[#003c8f] mb-1">Mot de passe</label>
+                <label for="floating_password" class="block text-sm font-medium text-[#071720] mb-1">Mot de passe</label>
                 <div class="flex items-center">
                     <img src="images/mdp.png" alt="Icone mot de passe" class="h-6 w-6 absolute left-3">
-                    <input wire:model="password" type="password" name="floating_password" id="floating_password" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-300 rounded-lg focus:ring-[#003c8f] focus:border-[#003c8f]" placeholder=" " required />
+                    <input wire:model="password" type="password" name="floating_password" id="floating_password" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-300 rounded-lg focus:ring-[#FFA02C] focus:border-[#FFA02C]" placeholder=" " required />
                 </div>
             </div>
             @error('password') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
             <div class="flex items-center justify-between mb-4">
-                <label for="remember" class="inline-flex items-center text-[#003c8f]">
-                    <input wire:model="remember" id="remember" type="checkbox" class="rounded text-blue-600 shadow-sm focus:ring-[#003c8f]" name="remember">
+                <label for="remember" class="inline-flex items-center text-[#071720]">
+                    <input wire:model="remember" id="remember" type="checkbox" class="rounded text-blue-100 shadow-sm focus:ring-[#FFA02C]" name="remember">
                     <span class="ml-2 text-sm">Se souvenir de moi</span>
                 </label>
 
                 @if (Route::has('password.request'))
-                    <a class="text-sm hover:underline text-[#003c8f]" href="{{ route('password.request') }}" wire:navigate>Mot de passe oublié?</a>
+                    <a class="text-sm hover:underline text-[#071720]" href="{{ route('password.request') }}" wire:navigate>Mot de passe oublié?</a>
                 @endif
             </div>
 
             <div>
-                <button type="submit" class="bg-[#003c8f] text-white w-full py-2.5 rounded-lg font-medium text-sm transition duration-300 ease-in-out hover:bg-[#002a6d] focus:ring-4 focus:outline-none focus:ring-[#003c8f]/50" style="background-color: #003c8f; color: white; width: 100%; padding: 0.625rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500;">
+                <button type="submit" class="bg-[#071720] text-white w-full py-2.5 rounded-lg font-medium text-sm transition duration-300 ease-in-out hover:bg-[#071720] focus:ring-4 focus:outline-none focus:ring-[#071720]/50" style="background-color: #071720; color: white; width: 100%; padding: 0.625rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500;">
                     Se connecter
                 </button>
             </div>

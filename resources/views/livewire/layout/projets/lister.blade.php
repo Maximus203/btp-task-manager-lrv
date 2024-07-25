@@ -1,4 +1,10 @@
-<div style="width: 90%" class="container xl:container mx-auto mt-10 ml-40">
+<div style="width: 82%" class="container xl:container mt-10 ml-60">
+    <!-- Grand titre -->
+    <div class="text-center mb-6">
+        <h1 class="text-3xl font-extrabold text-gray-900">Projet</h1>
+        <p class="text-lg text-gray-600">Découvrez tous les projets disponibles</p>
+    </div>
+
     <div class="flex items-center justify-between mb-4 px-4">
         <div class="w-full md:w-auto">
             <form>
@@ -17,9 +23,10 @@
             </form>
         </div>
         <div>
-            <a href="{{ route('creer-projet') }}" type="button"
-                class="bg-blue-400 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Ajouter
-                un projet</a>
+            <a href="{{ route('creer-projet') }}" type="button" class="bg-green-500 text-white py-2 px-6 rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 flex items-center">
+<i class="fas fa-plus mr-2"></i>
+                Ajouter un projet
+            </a>
         </div>
     </div>
 
@@ -32,65 +39,35 @@
             @foreach ($projets as $projet)
                 <div class="projet-item bg-[#f7f9fc] shadow-md rounded-lg overflow-hidden relative transform transition duration-500 hover:scale-105">
                     <div class="p-4">
-                        <!-- Status Bar -->
-                        <div class="absolute top-4 right-4">
-                            <div class="relative w-24 h-2 rounded-full bg-gray-300">
-                                <div class="absolute top-0 left-0 h-2 rounded-full"
-                                    style="
-                                    width: @switch($projet->statut)
-                                        @case('initial')
-                                            10%; 
-                                            @break
-                                        @case('en_cours')
-                                            50%; 
-                                            @break
-                                        @case('terminer')
-                                            100%; 
-                                            @break
-                                        @default
-                                            80%; 
-                                    @endswitch
-                                    background-color: @switch($projet->statut)
-                                        @case('initial')
-                                            #f44336; 
-                                            @break
-                                        @case('en_cours')
-                                            #ff9800; 
-                                            @break
-                                        @case('terminer')
-                                            #4caf50; 
-                                            @break
-                                        @default
-                                            #ff9855; 
-                                    @endswitch
-                                "
-                                ></div>
-                            </div>
-                            <span class="text-sm font-medium text-gray-400">
-                                @switch($projet->statut)
-                                    @case('initial')
-                                        10%
-                                        @break
-                                    @case('en_cours')
-                                        50%
-                                        @break
-                                    @case('terminer')
-                                        100%
-                                        @break
-                                    @default
-                                        80%
-                                @endswitch
-                            </span>
+                        <!-- Status Indicator -->
+                        <div class="absolute top-4 right-4 flex items-center space-x-2">
+                            @switch($projet->statut)
+                                @case('initial')
+                                    <div class="w-3 h-3 bg-red-700 rounded-full"></div>
+                                    <span class="text-xs text-red-700">Initial</span>
+                                    @break
+                                @case('en_cours')
+                                    <div class="w-3 h-3 bg-orange-400 rounded-full"></div>
+                                    <span class="text-xs text-orange-400">En cours</span>
+                                    @break
+                                @case('terminer')
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <span class="text-xs text-green-500">Terminé</span>
+                                    @break
+                                @default
+                                    <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
+                                    <span class="text-xs text-gray-500">Non spécifié</span>
+                            @endswitch
                         </div>
 
                         <a href="{{ route('details-projet', ['id' => $projet->idProjet]) }}">
-                            <h3 class="text-lg font-bold mb-2 text-[#003c8f] hover:text-blue-400">{{ $projet->nomProjet }}</h3>
+                            <h3 class="text-lg font-bold mb-2 text-[#071720] hover:text-blue-500">{{ $projet->nomProjet }}</h3>
                         </a>
-                        <p class="text-gray-700 mb-4">{{ $projet->description }}</p>
+                        <p class="text-[#071720] mb-4">{{ $projet->description }}</p>
 
                         <div class="flex justify-between items-center">
                             <a href="{{ route('modifier-projet', ['id' => $projet->idProjet]) }}"
-                                class="text-[#003c8f] hover:text-blue-400 font-medium">Editer</a>
+                                class="text-[#071720] hover:text-blue-500 font-medium">Editer</a>
                             <button onclick="confirmDelete({{ $projet->idProjet }})"
                                class="text-red-400 hover:text-red-600 font-medium">Supprimer</button>
                         </div>

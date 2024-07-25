@@ -26,8 +26,9 @@
             </div> --}}
             <!-- Texte de bienvenue -->
             <div id="accueil" class="welcome-text">
-                <h1>Bienvenue chez HAWEL KEBE</h1>
-                <p>Votre partenaire de confiance pour tous vos projets de construction et de rénovation. Avec une expertise éprouvée et un engagement inébranlable envers la qualité, nous transformons vos idées en réalités tangibles.</p>
+                <h1 class="text-l">Bienvenue chez HAWEL KEBE</h1>
+            
+                <p class="text-m">Votre partenaire de confiance pour tous vos projets de construction et de rénovation. Avec une expertise éprouvée et un engagement inébranlable envers la qualité, nous transformons vos idées en réalités tangibles.</p>
             </div>
         </div>
 

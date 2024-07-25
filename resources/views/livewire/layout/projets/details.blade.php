@@ -1,5 +1,8 @@
 <div style="width: 90%" class="container xl:container mx-auto mt-20 ml-40">
-<div class="p-6 mt-8 bg-white dark:bg-gray-800 sm:rounded-lg shadow-md">
+            <div class="text-center mb-12">
+            <h1 class="text-3xl font-bold text-[#071720]">Détails du projet</h1>
+        </div>
+    <div class="p-6 mt-8 bg-white dark:bg-gray-800 sm:rounded-lg shadow-md">    
     <div class="mb-4 flex justify-between items-center">
         <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
             <li class="me-2">
@@ -15,15 +18,12 @@
                 </a>
             </li>
         </ul>
-        <a href="{{ route('lister-projet') }}" type="button"
-           class="bg-blue-400 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-            Retour à la liste des projets
-        </a>
+
     </div>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+            <thead class="bg-[#071720] text-white">
                 <tr>
                     <th scope="col" class="px-6 py-3">Nom du projet</th>
                     <th scope="col" class="px-6 py-3">Chef de projet</th>
@@ -84,7 +84,7 @@
                 @error('plan') <span class="error text-red-600">{{ $message }}</span> @enderror
 
                 <button type="submit"
-                        class="mt-2 text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-transform transform hover:scale-105">
+                        class="mt-2 bg-green-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 transition duration-300">
                     Upload Plan
                 </button>
             </form>
