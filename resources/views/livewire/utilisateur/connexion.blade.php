@@ -18,8 +18,8 @@
             <div class="relative mb-4">
                 <label for="floating_email" class="block text-sm font-medium text-[#071720] mb-1">Email</label>
                 <div class="flex items-center">
-                    <img src="images/email.png" alt="Icone email" class="h-6 w-6 absolute left-3">
-                    <input wire:model="email" type="email" name="floating_email" id="floating_email" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-100 rounded-lg focus:ring-[#FFA02C] focus:border-[#FFA02C]" placeholder=" " required />
+                    <img src="images/email.png" style="filter: invert(100%); color: #071720" alt="Icone email" class="h-6 w-6 absolute left-3">
+                    <input wire:model="email" type="email" name="floating_email" id="floating_email" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-100 rounded-lg focus:ring-[#071720] focus:border-[#071720]" placeholder=" " required />
                 </div>
             </div>
             @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
@@ -27,15 +27,15 @@
             <div class="relative mb-4">
                 <label for="floating_password" class="block text-sm font-medium text-[#071720] mb-1">Mot de passe</label>
                 <div class="flex items-center">
-                    <img src="images/mdp.png" alt="Icone mot de passe" class="h-6 w-6 absolute left-3">
-                    <input wire:model="password" type="password" name="floating_password" id="floating_password" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-300 rounded-lg focus:ring-[#FFA02C] focus:border-[#FFA02C]" placeholder=" " required />
+                    <img src="images/mdp.png" style="filter: invert(100%); color: #071720" alt="Icone mot de passe" class="h-6 w-6 absolute left-3">
+                    <input wire:model="password" type="password" name="floating_password" id="floating_password" class="block w-full py-3 pl-10 pr-4 text-sm text-gray-700 bg-[#edf4f9] border border-gray-300 rounded-lg focus:ring-[#071720] focus:border-[#071720]" placeholder=" " required />
                 </div>
             </div>
             @error('password') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
             <div class="flex items-center justify-between mb-4">
                 <label for="remember" class="inline-flex items-center text-[#071720]">
-                    <input wire:model="remember" id="remember" type="checkbox" class="rounded text-blue-100 shadow-sm focus:ring-[#FFA02C]" name="remember">
+                    <input wire:model="remember" id="remember" style=" color: #071720" type="checkbox" class="rounded text-blue-100 shadow-sm focus:ring-[#071720]" name="remember">
                     <span class="ml-2 text-sm">Se souvenir de moi</span>
                 </label>
 

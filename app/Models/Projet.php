@@ -24,6 +24,10 @@ class Projet extends Model
         'plan',
     ];
 
+    protected $casts = [
+        'plan' => 'array',
+    ];
+
     public function chefDeProjet()
     {
         return $this->belongsTo(User::class, 'chefProjet');

@@ -1,51 +1,113 @@
 <?php
 
+// namespace App\Livewire\Layout\Projets;
+
+// use Livewire\Component;
+// use App\Models\Projet;
+// use Livewire\WithFileUploads;
+
+// class Details extends Component
+// {
+//     use WithFileUploads;
+//     public $idProjet;
+//     public $plan;
+//     public $hasPlan;
+
+//     public function mount($id)
+//     {
+//         $this->idProjet = $id;
+//         $this->loadPlanStatus();
+//     }
+
+//     public function loadPlanStatus()
+//     {
+//         $projet = Projet::find($this->idProjet);
+//         $this->hasPlan = !is_null($projet->plan);
+//     }
+
+//     public function uploadPlan()
+//     {
+//         $this->validate([
+//             'plan' => 'image|max:1024', // 1MB Max
+//         ]);
+
+//         $projet = Projet::find($this->idProjet);
+//         $path = $this->plan->store('plans', 'public');
+//         $projet->update(['plan' => $path]);
+
+//         $this->loadPlanStatus();
+
+//         session()->flash('message', 'Plan uploaded successfully.');
+//     }
+
+//     public function deletePlan()
+//     {
+//         $projet = Projet::find($this->idProjet);
+//         $projet->update(['plan' => null]);
+
+//         $this->loadPlanStatus();
+
+//         session()->flash('message', 'Plan deleted successfully.');
+//     }
+
+//     public function render()
+//     {
+//         $projet = Projet::find($this->idProjet);
+//         return view('livewire.layout.projets.details', [
+//             'projet' => $projet,
+//         ]);
+//     }
+// }
 namespace App\Livewire\Layout\Projets;
 
 use Livewire\Component;
-use App\Models\Projet;
 use Livewire\WithFileUploads;
+use App\Models\Projet;
 
 class Details extends Component
 {
     use WithFileUploads;
+
     public $idProjet;
-    public $plan;
-    public $hasPlan;
+    public $plans = [];
+    public $planFiles = [];
 
     public function mount($id)
     {
         $this->idProjet = $id;
-        $this->loadPlanStatus();
+        $this->loadPlans();
     }
 
-    public function loadPlanStatus()
+    public function loadPlans()
     {
         $projet = Projet::find($this->idProjet);
-        $this->hasPlan = !is_null($projet->plan);
+        $this->plans = $projet->plan ?? [];
     }
 
-    public function uploadPlan()
+    public function uploadPlans()
     {
         $this->validate([
-            'plan' => 'image|max:1024', // 1MB Max
+            'planFiles.*' => 'image|max:2048', // Validation des fichiers
         ]);
 
         $projet = Projet::find($this->idProjet);
-        $path = $this->plan->store('plans', 'public');
-        $projet->update(['plan' => $path]);
 
-        $this->loadPlanStatus();
+        foreach ($this->planFiles as $file) {
+            $path = $file->store('plans', 'public');
+            $this->plans[] = $path;
+        }
 
-        session()->flash('message', 'Plan uploaded successfully.');
+        $projet->update(['plan' => $this->plans]);
+
+        $this->planFiles = []; // Réinitialisation des fichiers après upload
+        session()->flash('message', 'Plans uploaded successfully.');
     }
 
-    public function deletePlan()
+    public function deletePlan($index)
     {
         $projet = Projet::find($this->idProjet);
-        $projet->update(['plan' => null]);
-
-        $this->loadPlanStatus();
+        array_splice($this->plans, $index, 1);
+        $projet->update(['plan' => $this->plans]);
 
         session()->flash('message', 'Plan deleted successfully.');
     }
@@ -55,6 +117,7 @@ class Details extends Component
         $projet = Projet::find($this->idProjet);
         return view('livewire.layout.projets.details', [
             'projet' => $projet,
+            'plans' => $this->plans,
         ]);
     }
 }

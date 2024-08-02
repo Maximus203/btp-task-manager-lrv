@@ -27,7 +27,8 @@ Route::middleware('auth')->group(function () {
 
     Route::view('planning-projets/{id}', 'pages.projets.planning')->name('planning-projet');
 
-    Route::view('creation-tache', 'pages.taches.creer')->name('creer-tache');
+    Route::view('creation-tache/{idProjet?}', 'pages.taches.creer')->name('creer-tache');
+    // Route::view('creation-tache', 'pages.taches.creer')->name('creer-tache');
     Route::view('liste-tache', 'pages.taches.lister')->name('lister-tache');
     Route::view('details-taches/{id}', 'pages.taches.details')->name('details-tache');
     Route::view('modification-tache/{id}', 'pages.taches.modifier')->name('modifier-tache');

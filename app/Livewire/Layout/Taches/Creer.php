@@ -64,6 +64,16 @@ class Creer extends Component
         $this->ouvrier = '';
     }
 
+    public function mount($idProjet = null)
+    {
+        if ($idProjet) {
+            $this->idProjet = $idProjet;
+        }
+    }
+
+
+
+
     public function render()
     {
         $ouvriers = User::where("idRole", 3)->get()->map(function ($ouvrier) {
@@ -76,6 +86,7 @@ class Creer extends Component
         return view('livewire.layout.taches.creer', [
             'ouvriers' => $ouvriers,
             'projets' => $projets,
+            'idProjet' => $this->idProjet,
         ]);
     }
 }
