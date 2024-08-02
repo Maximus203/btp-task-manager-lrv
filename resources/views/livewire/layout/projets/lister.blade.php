@@ -8,7 +8,7 @@
     <div class="flex items-center justify-between mb-4 px-4">
         <div class="w-full md:w-auto">
             <form>
-                <label for="table-search" class="sr-only">Search</label>
+                <label for="table-search" class="sr-only">Rechercher</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
@@ -24,7 +24,7 @@
         </div>
         <div>
             <a href="{{ route('creer-projet') }}" type="button" class="bg-green-500 text-white py-2 px-6 rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 flex items-center">
-<i class="fas fa-plus mr-2"></i>
+                <i class="fas fa-plus mr-2"></i>
                 Ajouter un projet
             </a>
         </div>
@@ -62,7 +62,9 @@
 
                         <a href="{{ route('details-projet', ['id' => $projet->idProjet]) }}">
                             <h3 class="text-lg font-bold mb-2 text-[#071720] hover:text-blue-500">{{ $projet->nomProjet }}</h3>
-                        </a>
+<center><img style="height: 90px; width: 90px" src="\images\icons8-travailleurs-hommes-peau-type-3-100.png" alt="Illustration du projet" class="object-cover mb-4">
+</center>                      
+</a>
                         <p class="text-[#071720] mb-4">{{ $projet->description }}</p>
 
                         <div class="flex justify-between items-center">
