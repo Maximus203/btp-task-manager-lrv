@@ -54,7 +54,6 @@
             </div>
         </nav>
 
-
         <!-- Barre Latérale Verticale -->
         <aside style="width: 15%" class="fixed top-16 left-0 h-full w-64 bg-gray-800 text-white z-20">
             <div class="flex flex-col h-full">

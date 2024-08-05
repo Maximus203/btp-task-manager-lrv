@@ -38,6 +38,7 @@ $updatePassword = function () {
 };
 
 ?>
+<div style="width: 82%" class="container xl:container mt-10 ml-60">
 
 <section>
     <header>
@@ -78,3 +79,4 @@ $updatePassword = function () {
         </div>
     </form>
 </section>
+</div>

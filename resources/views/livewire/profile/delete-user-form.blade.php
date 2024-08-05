@@ -19,6 +19,7 @@ $supprimerCompte = function (Logout $logout) {
 };
 
 ?>
+<div style="width: 82%" class="container xl:container mt-10 ml-60">
 
 <section class="space-y-6">
     <header>
@@ -74,3 +75,4 @@ $supprimerCompte = function (Logout $logout) {
         </form>
     </x-modal>
 </section>
+</div>

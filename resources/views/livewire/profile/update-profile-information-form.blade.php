@@ -1,4 +1,4 @@
-<div>
+<div style="width: 82%" class="container xl:container mt-10 ml-60">
   <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
