@@ -1,4 +1,4 @@
-<div class="container xl:container mx-auto px-6 md:px-10 lg:px-20 lg:ml-[100px]">
+<div class="container xl:container mx-auto px-6 md:px-10 lg:px-10 lg:ml-[100px]">
     <div class="p-6 bg-white dark:bg-gray-800 sm:rounded-lg shadow-lg">
 
         <!-- Bouton de retour -->

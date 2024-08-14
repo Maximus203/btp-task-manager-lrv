@@ -94,7 +94,7 @@
 </div>
 
  --}}
-<div style="width: 90%" class="container xl:container mx-auto mt-20 ml-40">
+<div style="width: 90%" class="container   mt-6 ml-40">
     <div class="text-center mb-12">
         <h1 class="text-3xl font-bold text-[#071720]">Détails du projet</h1>
     </div>
@@ -141,7 +141,9 @@
                             {{ $projet->clientProjet->nom }} {{ $projet->clientProjet->prenom }}
                         </td>
                         <td class="px-6 py-4">
-                            <!-- Ajoutez ici les informations sur les ouvriers si disponible -->
+                          <div>Modou Fall</div>
+                          <div>Seynabou Bousso</div>
+                          <div>Adja Gueye</div>
                         </td>
                         <td class="px-6 py-4">
                             {{ $projet->budget }}

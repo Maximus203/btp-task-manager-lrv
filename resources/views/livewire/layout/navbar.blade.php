@@ -75,7 +75,7 @@
                         </a>
                         @if (Auth::user()->idRole == 1 || Auth::user()->idRole == 2)
                             <a href="{{ route('lister-utilisateur') }}" class="flex items-center space-x-2 px-4 py-2 text-white rounded hover:bg-[#38B5FF] {{ (request()->route()->getName() == 'lister-utilisateur') ? 'bg-[#38B5FF]' : '' }}">
-                                <i class="fas fa-user mr-2"></i> Utilisateur
+                                <i class="fas fa-user mr-2"></i> Utilisateurs
                             </a>
                         @endif
                     @endif

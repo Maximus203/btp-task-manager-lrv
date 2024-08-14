@@ -4,10 +4,15 @@
     </div>
     <div class="p-6 mt-8 bg-white dark:bg-gray-800 sm:rounded-lg shadow-md">
         <div class="mb-4 flex justify-between items-center">
-<a href="{{ route('creer-tache', ['idProjet' => $projet->idProjet]) }}" type="button"
+{{-- <a href="{{ route('creer-tache', ['idProjet' => $projet->idProjet]) }}" type="button"
    class="mt-2 bg-green-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 transition duration-300">
    Ajouter une tâche
-</a>
+</a> --}}
+
+            <a style="margin-left: 80%" href="{{ route('creer-tache', ['idProjet' => $projet->idProjet]) }}" type="button" class="bg-green-500 text-white py-2 px-6 rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 flex items-center">
+                <i class="fas fa-plus mr-2"></i>
+                Ajouter une tâche
+            </a>
         </div>
 
     <div class="mb-4">

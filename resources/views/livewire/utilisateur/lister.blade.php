@@ -3,13 +3,12 @@
         <h1 class="text-3xl font-extrabold text-gray-900">Liste des utilisateurs</h1>
     </div>
     <div style="width: 98%" class="overflow-x-auto bg-[#edf4f9] p-6 rounded-lg shadow-lg">
-        <div class="w-1/4">
+        <div style="margin-left: 70%" class="w-1/4">
             <a href="{{ route('register') }}" type="button"
                class="bg-green-500 text-white py-2 px-6 rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 flex items-center justify-center">
                 <i class="fas fa-plus mr-2"></i> <!-- Icône d'ajout -->
                 Ajouter un utilisateur
             </a>
-     
         </div>
         <br>
 

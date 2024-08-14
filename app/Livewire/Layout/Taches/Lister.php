@@ -47,6 +47,8 @@
 
 namespace App\Livewire\Layout\Taches;
 
+namespace App\Livewire\Layout\Taches;
+
 use App\Models\Tache;
 use App\Models\Projet;
 use Livewire\Component;
@@ -86,8 +88,11 @@ class Lister extends Component
 
     public function confirmSupprimer($id)
     {
-        $this->tacheIdToDelete = $id;
-        $this->supprimer($id);
+        $user = Auth::user();
+        if ($user->idRole !== 3) {
+            $this->tacheIdToDelete = $id;
+            $this->supprimer($id);
+        }
     }
 
     public function supprimer($id)

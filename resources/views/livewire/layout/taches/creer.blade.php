@@ -1,5 +1,5 @@
 <div>
-    <div class="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-lg mt-10">
+    <div  class="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-lg mt-10">
         <b><i><h3 style="text-align: center">Formulaire d'ajout de tache</h3></i></b>
         <br>
         <form class="space-y-6" wire:submit.prevent="submit">

@@ -121,7 +121,7 @@
     </script>
 </div> --}}
 
-<div style="width: 82%" class="container xl:container mt-10 ml-60">
+<div style="width: 80%" class="container xl:container mx-auto ml-60">
     <!-- Grand titre -->
     <div class="text-center mb-6">
         <h1 class="text-3xl font-extrabold text-gray-900">Projet</h1>
